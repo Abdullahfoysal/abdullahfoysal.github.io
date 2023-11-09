@@ -1,1 +1,87 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+    <h1>My Portfolio</h1>
+    <div class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<div id="projects" class="project">
+    <h2>Project 1</h2>
+
+    <h2 id="userId"></h2>
+    <h2 id="id"></h2>
+    <h2 id="title"></h2>
+    <h2 id="completed"></h2>
+    <img src="project1.jpg" alt="Project 1">
+    <p>Description for Project 1 goes here.</p>
+</div>
+
+<div class="project">
+    <h2>Project 2</h2>
+    <img src="project2.jpg" alt="Project 2">
+    <p>Description for Project 2 goes here.</p>
+</div>
+
+<div class="project">
+    <h2>Project 3</h2>
+    <img src="project3.jpg" alt="Project 3">
+    <p>Description for Project 3 goes here.</p>
+</div>
+
+<div id="profile" class="project">
+    <h2>Profile</h2>
+    <p>Your profile information goes here.</p>
+</div>
+
+<div id="contact" class="project">
+    <h2>Contact</
