@@ -57,18 +57,111 @@
             margin-bottom: 10px;
         }
     </style>
+    <!-- Carousel view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Image Carousel</title>
+  <!-- Add Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Set a fixed height for the carousel */
+        .carousel-inner {
+            width: 100%;
+        height: 250px; /* Adjust the height as needed */
+        
+        }
+
+        /* Set a fixed height for the images within the carousel */
+        .carousel-item img {
+        height: 250px;
+        width: 100%;
+        object-fit: contain; /* Maintain aspect ratio and cover the entire container */
+        }
+        
+        /* Set the color of the carousel control buttons to black */
+    .carousel-control-prev,
+    .carousel-control-next {
+      color: #000;
+    }
+
+    /* Override the background image for the carousel control icons with a custom image */
+    .carousel-control-next-icon {
+      background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon fill="black" points="8 4 0 8 0 0"/></svg>');
+    }
+
+    /* Optionally, you can set the hover color as well */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      color: #fff; /* Change to the desired hover color */
+    }
+        
+    </style>
 </head>
 
 <body>
+    
+
 
     <header>
         <h1 id="projectName">Your Project Name</h1>
     </header>
-
+    <!-- <object type="text/html" data="carousl.html" style="width:100%; height:300px;"></object> -->
     <section>
-        <div class="screenshot-container" id="screenshotContainer">
-            <!-- Screenshots will be dynamically added here -->
-        </div>
+        <div class="container mt-5">
+            <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="carousel-inner">
+                <!-- Carousel items will be dynamically added here using JavaScript -->
+              </div>
+              <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Add Bootstrap JS and Popper.js scripts -->
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+          
+          <script>
+            // Array of image URLs
+            const imageList = [
+              "img/certificates/portfolio-1.jpg",
+              "img/certificates/portfolio-2.jpg",
+              "img/certificates/portfolio-3.jpg",
+              // Add more image URLs as needed
+            ];
+          
+            // Function to dynamically create carousel items
+            function createCarouselItems() {
+              const carouselInner = document.getElementById("carousel-inner");
+          
+              imageList.forEach((imageUrl, index) => {
+                const carouselItem = document.createElement("div");
+                carouselItem.className = "carousel-item";
+          
+                // Set the first item as active
+                if (index === 0) {
+                  carouselItem.classList.add("active");
+                }
+          
+                const img = document.createElement("img");
+                img.src = imageUrl;
+                img.className = "d-block w-100";
+                img.alt = `Slide ${index + 1}`;
+          
+                carouselItem.appendChild(img);
+                carouselInner.appendChild(carouselItem);
+              });
+            }
+          
+            // Call the function to create carousel items
+            createCarouselItems();
+          </script>
 
         <h2>Project Description</h2>
         <p id="projectDescription">Your project description goes here. Provide an overview of what your project is about.</p>
@@ -102,17 +195,7 @@
             // Update technology details
             document.getElementById('projectTech').innerText = projectData.projectTech;
 
-            // Dynamically add screenshots (replace URLs with your actual screenshot URLs)
-            const screenshotContainer = document.getElementById('screenshotContainer');
-            screenshotContainer.innerHTML = "";  // Clear previous screenshots
-            const screenshotURLs = ["screenshot1.jpg", "screenshot2.jpg", "screenshot3.jpg"];
-            screenshotURLs.forEach(url => {
-                const img = document.createElement('img');
-                img.className = 'screenshot';
-                img.src = url;
-                img.alt = 'Project Screenshot';
-                screenshotContainer.appendChild(img);
-            });
+           
         }
 
         // Simulate receiving data from the main page (replace with actual data)
