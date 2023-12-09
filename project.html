@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="projectTitle">Your Project Name</title>
     <style>
+      #projectName {
+      color: #3498db; /* Set text color to a shade of blue */
+      text-align: center;
+      font-size: 3em; /* Adjust the font size */
+      text-transform: uppercase; /* Convert text to uppercase */
+      letter-spacing: 3px; /* Add letter spacing */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+      transition: color 0.3s ease-in-out; /* Add a smooth color transition */
+    }
+
+    #projectName:hover {
+      color: #e74c3c; /* Change text color on hover */
+    }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -84,6 +97,9 @@
     }
 
     /* Override the background image for the carousel control icons with a custom image */
+    .carousel-control-prev-icon {
+      background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon fill="black" points="8 0 8 8 0 4"/></svg>');
+    }
     .carousel-control-next-icon {
       background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon fill="black" points="8 4 0 8 0 0"/></svg>');
     }
@@ -93,6 +109,7 @@
     .carousel-control-next:hover {
       color: #fff; /* Change to the desired hover color */
     }
+
         
     </style>
 </head>
@@ -130,9 +147,14 @@
           <script>
             // Array of image URLs
             const imageList = [
-              "img/certificates/portfolio-1.jpg",
-              "img/certificates/portfolio-2.jpg",
-              "img/certificates/portfolio-3.jpg",
+              "img/projects/mathOlympiad/1.png",
+              "img/projects/mathOlympiad/2.png",
+              "img/projects/mathOlympiad/3.png",
+              "img/projects/mathOlympiad/4.png",
+              "img/projects/mathOlympiad/5.png",
+              "img/projects/mathOlympiad/6.png",
+              "img/projects/mathOlympiad/7.png",
+              "img/projects/mathOlympiad/8.png"
               // Add more image URLs as needed
             ];
           
@@ -200,10 +222,10 @@
 
         // Simulate receiving data from the main page (replace with actual data)
         const sampleData = {
-            projectName: "Dynamic Project233",
-            projectDescription: "HolllaThis project was dynamically passed from the main page.",
-            projectFeatures: ["Dynamic Feature 1", "Dynamic Feature 2", "Dynamic Feature 3"],
-            projectTech: "Dynamic Tech Stack: HTML, CSS, JavaScript"
+            projectName: "MathOlympiad Application",
+            projectDescription: "Math,puzzle problem solving application for School,College students",
+            projectFeatures: ["Mathmatics Equation type problem","Maximum 4 tries to solve problem","Favourite Problem List", "Global Ranking with statistics", "Profile statistics","Login with Google"],
+            projectTech: "Flutter,Dart,Firebase,Git"
         };
 
         // Call the function to populate project details with sample data
