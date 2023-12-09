@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="projectTitle">Your Project Name</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .screenshot-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="projectName">Your Project Name</h1>
+    </header>
+
+    <section>
+        <div class="screenshot-container" id="screenshotContainer">
+            <!-- Screenshots will be dynamically added here -->
+        </div>
+
+        <h2>Project Description</h2>
+        <p id="projectDescription">Your project description goes here. Provide an overview of what your project is about.</p>
+
+        <h2>Project Key Features</h2>
+        <ul id="projectFeatures">
+            <!-- Features will be dynamically added here -->
+        </ul>
+
+        <h2>Tools & Technologies</h2>
+        <p id="projectTech">List the tools and technologies used in your project, such as programming languages, frameworks, etc.</p>
+    </section>
+
+    <script>
+        // Function to dynamically populate project details
+        function populateProjectDetails(projectData) {
+            // Update the document elements with dynamic data
+            document.getElementById('projectName').innerText = projectData.projectName;
+            document.getElementById('projectTitle').innerText = projectData.projectName;
+            document.getElementById('projectDescription').innerText = projectData.projectDescription;
+
+            // Populate features list
+            const featuresList = document.getElementById('projectFeatures');
+            featuresList.innerHTML = "";
+            projectData.projectFeatures.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerText = feature;
+                featuresList.appendChild(li);
+            });
+
+            // Update technology details
+            document.getElementById('projectTech').innerText = projectData.projectTech;
+
+            // Dynamically add screenshots (replace URLs with your actual screenshot URLs)
+            const screenshotContainer = document.getElementById('screenshotContainer');
+            screenshotContainer.innerHTML = "";  // Clear previous screenshots
+            const screenshotURLs = ["screenshot1.jpg", "screenshot2.jpg", "screenshot3.jpg"];
+            screenshotURLs.forEach(url => {
+                const img = document.createElement('img');
+                img.className = 'screenshot';
+                img.src = url;
+                img.alt = 'Project Screenshot';
+                screenshotContainer.appendChild(img);
+            });
+        }
+
+        // Simulate receiving data from the main page (replace with actual data)
+        const sampleData = {
+            projectName: "Dynamic Project233",
+            projectDescription: "HolllaThis project was dynamically passed from the main page.",
+            projectFeatures: ["Dynamic Feature 1", "Dynamic Feature 2", "Dynamic Feature 3"],
+            projectTech: "Dynamic Tech Stack: HTML, CSS, JavaScript"
+        };
+
+        // Call the function to populate project details with sample data
+        populateProjectDetails(sampleData);
+    </script>
+
+</body>
+
+</html>

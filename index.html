@@ -26,6 +26,18 @@
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <script>
+            function openPopup() {
+             
+                // Create a new window
+                var popup = window.open('project.html', 'Popup', 'width=800,height=600,scrollbars=yes');
+    
+                
+            }
+        </script>
+
+
+
         <div class="wrapper">
             <div class="sidebar">
                 <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
@@ -56,6 +68,11 @@
                     <div class="row px-3">
                         <div class="col-12">
                             <h2 class="title position-relative pb-2 mb-4">About Me</h2>
+                            <button onclick="openPopup()">Open Popup</button>
+
+  
+
+   
                         </div>
                         <div class="col-12">
                             <p>
