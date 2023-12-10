@@ -260,32 +260,34 @@
                 <!-- Education End -->
 
 
-<!-- Projects Start -->
-<div class="container bg-white py-5">
-    <div class="row px-3">
-        <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Personal Projects</h2>
-        </div>
-        <div class="col-12">
-            <div class="project-item-container">
-                <!-- Project 1 -->
-                <div class="project-item">
-                    <!-- <i class="fas fa-mobile-alt project-icon"></i> -->
-                    <div class="project-details">
-                        <h5 class="project-title">MathOlympiad Android App</h5>
-                        <p class="project-subtitle">Problem Solving Platform</p>
-                        <p class="project-subtitle">Tools: Flutter-Dart, Firebase, Git</p>
-                       
-                        <button onclick="openPopup()" class="fab fa-google-play">View</button>
+                <!-- Projects Start -->
+                <div class="container bg-white py-5">
+                    <div class="row px-3">
+                        <div class="col-12">
+                            <h2 class="title position-relative pb-2 mb-4">Personal Projects</h2>
+                        </div>
+                        <div class="col-12">
+                            <div class="project-item-container">
+                                <!-- Project 1 -->
+                                <!-- Project Item Start -->
+                                <div class="project-card">
+                                    <div class="project-details">
+                                        <h5 class="project-title">MathOlympiad Android App</h5>
+                                        <p class="project-subtitle">Problem Solving Platform</p>
+                                        <p class="project-subtitle">Tools: Flutter-Dart, Firebase, Git</p>
+                                    
+                                        <button onclick="openPopup()" class="project-button">View <i class="fab fa-google-play"></i></button>
+                                    </div>
+                                </div>
+                                <!-- Project Item End -->
+
+
+                            
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-              
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Projects End -->
+                <!-- Projects End -->
 
 
                 
@@ -554,5 +556,46 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <style>
+            .project-card {
+    border: 1px solid #ddd; /* Add a border for the card */
+    border-radius: 8px; /* Add rounded corners */
+    overflow: hidden; /* Hide any content that overflows the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition on hover */
+    margin-bottom: 20px; /* Add some spacing between cards */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Enlarge the card on hover */
+}
+
+.project-details {
+    padding: 20px; /* Add padding inside the card */
+}
+
+.project-title {
+    font-size: 1.5em; /* Adjust the title font size */
+    margin-bottom: 10px; /* Add some spacing below the title */
+}
+
+.project-subtitle {
+    margin-bottom: 5px; /* Add some spacing below the subtitles */
+}
+
+.project-button {
+    background-color: #3498db; /* Set button background color */
+    color: #fff; /* Set button text color */
+    padding: 8px 15px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Add rounded corners to the button */
+    cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.project-button:hover {
+    background-color: #2980b9; /* Darken button color on hover */
+}
+
+        </style>
     </body>
 </html>
