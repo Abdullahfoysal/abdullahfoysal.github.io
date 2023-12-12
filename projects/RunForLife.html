@@ -112,15 +112,15 @@
     </style>
     <!-- Carousel view -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Image Carousel</title>
-  <!-- Add Bootstrap CSS link -->
+    <title>Dynamic Image Carousel</title>
+    <!-- Add Bootstrap CSS link -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Set a fixed height for the carousel */
         .carousel-inner {
             width: 100%;
         height: 250px; /* Adjust the height as needed */
-        
+
         }
 
         /* Set a fixed height for the images within the carousel */
@@ -129,7 +129,7 @@
         width: 100%;
         object-fit: contain; /* Maintain aspect ratio and cover the entire container */
         }
-        
+
         /* Set the color of the carousel control buttons to black */
     .carousel-control-prev,
     .carousel-control-next {
@@ -150,41 +150,41 @@
       color: #fff; /* Change to the desired hover color */
     }
 
-        
+
     </style>
 </head>
 
 <body>
-    
 
 
-    <header>
-        <h1 id="projectName">Your Project Name</h1>
-    </header>
-    <!-- <object type="text/html" data="carousl.html" style="width:100%; height:300px;"></object> -->
-    <section>
-        <div class="container mt-5">
-            <div id="imageCarousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" id="carousel-inner">
+
+<header>
+    <h1 id="projectName">Your Project Name</h1>
+</header>
+<!-- <object type="text/html" data="carousl.html" style="width:100%; height:300px;"></object> -->
+<section>
+    <div class="container mt-5">
+        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carousel-inner">
                 <!-- Carousel items will be dynamically added here using JavaScript -->
-              </div>
-              <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+            </div>
+            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+            </a>
+            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          
-          <!-- Add Bootstrap JS and Popper.js scripts -->
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-          
-          <script>
+            </a>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
             // Array of image URLs
             const imageList = [
               "img/projects/mathOlympiad/1.png",
@@ -197,47 +197,47 @@
               "img/projects/mathOlympiad/8.png"
               // Add more image URLs as needed
             ];
-          
+
             // Function to dynamically create carousel items
             function createCarouselItems() {
               const carouselInner = document.getElementById("carousel-inner");
-          
+
               imageList.forEach((imageUrl, index) => {
                 const carouselItem = document.createElement("div");
                 carouselItem.className = "carousel-item";
-          
+
                 // Set the first item as active
                 if (index === 0) {
                   carouselItem.classList.add("active");
                 }
-          
+
                 const img = document.createElement("img");
                 img.src = imageUrl;
                 img.className = "d-block w-100";
                 img.alt = `Slide ${index + 1}`;
-          
+
                 carouselItem.appendChild(img);
                 carouselInner.appendChild(carouselItem);
               });
             }
-          
+
             // Call the function to create carousel items
             createCarouselItems();
           </script>
 
-        <h2>Project Description</h2>
-        <p id="projectDescription">Your project description goes here. Provide an overview of what your project is about.</p>
+    <h2>Project Description</h2>
+    <p id="projectDescription">Your project description goes here. Provide an overview of what your project is about.</p>
 
-        <h2>Project Key Features</h2>
-        <ul id="projectFeatures">
-            <!-- Features will be dynamically added here -->
-        </ul>
+    <h2>Project Key Features</h2>
+    <ul id="projectFeatures">
+        <!-- Features will be dynamically added here -->
+    </ul>
 
-        <h2>Tools & Technologies</h2>
-        <p id="projectTech">List the tools and technologies used in your project, such as programming languages, frameworks, etc.</p>
-    </section>
+    <h2>Tools & Technologies</h2>
+    <p id="projectTech">List the tools and technologies used in your project, such as programming languages, frameworks, etc.</p>
+</section>
 
-    <script>
+<script>
         // Function to dynamically populate project details
         function populateProjectDetails(projectData) {
             // Update the document elements with dynamic data
@@ -257,25 +257,19 @@
             // Update technology details
             document.getElementById('projectTech').innerText = projectData.projectTech;
 
-           
+
         }
 
         // Simulate receiving data from the main page (replace with actual data)
         const sampleData = {
-            projectName: "MathOlympiad Application",
-            projectDescription: "Math,puzzle problem solving application for School,College students",
-            projectFeatures: ["Mathematics Equation type problem","Maximum 4 tries to solve problem","Favourite Problem List", "Global Ranking with statistics", "Profile statistics","Login with Google"],
-            projectTech: "Flutter,Dart,Firebase,Git"
+            projectName: "Run For Life"
+            projectDescription: "Running,shooting 2D game",
+            projectFeatures: ["Level Challenges","Life Supports","Save People", "Shooting enemy", "stab enemy"],
+            projectTech: "C++, SFML"
         };
 
         // Call the function to populate project details with sample data
         populateProjectDetails(sampleData);
-    </script>
-    <script>
-    function runOnPopup() {
-        // Your code to run on the popup window
-        alert('Function executed on the popup window!');
-    }
     </script>
 
 </body>

@@ -31,9 +31,12 @@
              
                 // Create a new window
                 var popup = window.open('project.html', 'Popup', 'width=800,height=600,scrollbars=yes');
-    
-                
             }
+
+             function openUrl(url) {
+        // Change 'https://www.example.com' to the URL you want to open in a new tab
+        window.open(url, '_blank');
+    }
         </script>
 
 
@@ -280,6 +283,16 @@
                                     </div>
                                 </div>
                                 <!-- Project Item End -->
+                                <!-- Project Item Start -->
+                                <div class="project-card">
+                                    <div class="project-details">
+                                        <h5 class="project-title">Run For Life 2D Game</h5>
+                                        <p class="project-subtitle">Running,Shooting,Level challenge</p>
+                                        <p class="project-subtitle">Tools: C++,SFML Library, Git</p>
+
+                                        <button onclick="openUrl('https://github.com/Abdullahfoysal/Run_For_Life')" class="project-button">View <i class="fab fa-github"></i></button>
+                                    </div>
+                                </div>
 
 
                             
