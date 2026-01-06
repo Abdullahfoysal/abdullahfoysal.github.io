@@ -1,711 +1,1064 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8">
-  <title>Abdullah - Portfolio Website</title>
+  <title>Abdullah Foysal | Expert Cross-Platform Mobile Developer</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="Free Website Template" name="keywords">
-  <meta content="Free Website Template" name="description">
+  <meta name="description" content="Abdullah Foysal - Expert Cross-Platform Mobile Developer with 5+ years experience in Flutter, iOS, Android, and WatchOS. 60+ production apps deployed.">
+  <meta name="keywords" content="Mobile Developer, Flutter Developer, iOS Developer, Android Developer, Cross-Platform, Swift, Dart, Bangladesh">
+  <meta name="author" content="Abdullah Foysal">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdullah Foysal | Expert Cross-Platform Mobile Developer">
+  <meta property="og:description" content="5+ years building production-ready mobile apps. 60+ apps deployed on App Store & Google Play.">
+  <meta property="og:image" content="img/profile.png">
 
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Poppins&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Libraries Stylesheet -->
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Customized Bootstrap Stylesheet -->
+  <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-  <script>
-    function openPopup() {
+<body>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
 
-      // Create a new window
-      var popup = window.open('project.html', 'Popup', 'width=800,height=600,scrollbars=yes');
-    }
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-text">AF</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#apps" class="nav-link">Apps</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    function openUrl(url) {
-      // Change 'https://www.example.com' to the URL you want to open in a new tab
-      window.open(url, '_blank');
-    }
-  </script>
-
-
-
-  <div class="wrapper">
-    <div class="sidebar">
-      <div class="sidebar-text d-flex flex-column h-100 justify-content-center text-center">
-        <img class="w-100 img-fluid mb-4" src="img/profile.png" alt="Image">
-        <h1 class="mt-2">Abdullah Foysal</h1>
-        <div class="mb-4" style="height: 22px;">
-          <h4 class="typed-text-output d-inline-block text-body"></h4>
-          <div class="typed-text d-none">Android Developer,Flutter Developer,IOS Developer,WatchOs Developer</div>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-particles" id="particles"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
         </div>
-        <div class="d-flex justify-content-center mt-auto mb-3">
-          <a class="mx-2" href="https://github.com/Abdullahfoysal" target="_blank"><i class="fab fa-github"></i></a>
-          <a class="mx-2" href="https://www.linkedin.com/in/abdullahfoysal/" target="_blank"><i
-              class="fab fa-linkedin-in"></i></a>
-
-          <a class="mx-2" href="https://www.youtube.com/@studytab4827" target="_blank"><i
-              class="fab fa-youtube"></i></a>
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight">Abdullah Foysal</span>
+        </h1>
+        <div class="hero-subtitle">
+          <span class="typed-text" id="typed"></span>
         </div>
-        <div class="d-flex align-items-end justify-content-between">
-          <a href="https://www.linkedin.com/in/abdullahfoysal/overlay/1709322399472/single-media-viewer/?profileId=ACoAAC4eeEQB6vVed0Kj4XnFWmc4dbOofIAg1YY"
-            class="btn btn-block border-right" target="_blank">Download CV</a>
-          <a href="https://www.linkedin.com/in/abdullahfoysal/" class="btn btn-block btn-scroll" target="_blank">Contact
-            Me</a>
+        <p class="hero-description">
+          Expert in cross-platform mobile development with <strong>5+ years</strong> of experience building production-ready applications.
+          Scaled platforms driving <strong>60+ apps</strong> on App Store and Google Play.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="60">0</span>+
+            <span class="stat-label">Apps Deployed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="5">0</span>+
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="100">0</span>K+
+            <span class="stat-label">Downloads</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            Get In Touch
+          </a>
+          <a href="resume/foysal_resume_2026.pdf" class="btn btn-secondary" download>
+            <i class="fas fa-download"></i>
+            Download CV
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Abdullahfoysal" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abdullahfoysal/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/@studytab4827" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="mailto:abdullahfoysal32@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
       </div>
-      <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
-        <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+      <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="image-wrapper">
+          <div class="image-glow"></div>
+          <img src="img/profile.png" alt="Abdullah Foysal - Mobile Developer">
+          <div class="floating-badge flutter">
+            <img src="img/flutter.png" alt="Flutter">
+          </div>
+          <div class="floating-badge swift">
+            <i class="fab fa-swift"></i>
+          </div>
+          <div class="floating-badge android">
+            <i class="fab fa-android"></i>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="content">
-      <!-- About Start -->
-      <div class="container bg-white py-5">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">About Me</h2>
+    <div class="scroll-indicator">
+      <a href="#about">
+        <span class="mouse">
+          <span class="wheel"></span>
+        </span>
+        <span class="arrow">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </a>
+    </div>
+  </section>
 
-
-
-
-
-          </div>
-          <div class="col-12">
-            <p>
-              As a seasoned Full Stack mobile application developer with a B.Sc. in Software Engineering, I bring three
-              years of expertise, specializing in Android, iOS (Swift), Flutter, and WatchOS. I excel in collaborative
-              environments, following SOLID principles and Clean Architecture to deliver polished applications published
-              on both Google Play Store and the App Store. With a track record of successful projects at Kaz Software
-              Ltd., including a book reader app and EVV app, I am dedicated to the entire software development
-              lifecycle, from requirement analysis to deployment.</p>
-            <div class="row">
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Name:</h5> Abdullah Al Foysal
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Get To Know</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text" data-aos="fade-right">
+          <p class="about-intro">
+            I'm a <strong>Full Stack Mobile Application Developer</strong> with a B.Sc. in Software Engineering from
+            Shahjalal University of Science and Technology. Currently serving as <strong>Lead Flutter Developer</strong>
+            at Kaz Software Ltd., working with Fitness Business Profits UK Team.
+          </p>
+          <p>
+            I specialize in building scalable, production-ready mobile applications using Flutter, Swift, and native Android.
+            With experience in MVC, MVP, MVVM, and Clean Architecture, I follow SOLID principles to create maintainable codebases.
+          </p>
+          <p>
+            My expertise spans 10+ categories including e-commerce, health-fitness, EVV, book reading, cricket scoring,
+            MIS, and flight monitoring domains. I've automated app building workflows using Bash scripts, GitHub Actions,
+            and Fastlane.
+          </p>
+          <div class="about-info">
+            <div class="info-grid">
+              <div class="info-item">
+                <i class="fas fa-user"></i>
+                <span class="info-label">Name</span>
+                <span class="info-value">Abdullah Foysal</span>
               </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Birthday:</h5> February,1999
+              <div class="info-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="info-label">Degree</span>
+                <span class="info-value">B.Sc. Software Engineering</span>
               </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Degree:</h5> B.sc in Software Engineering
+              <div class="info-item">
+                <i class="fas fa-briefcase"></i>
+                <span class="info-label">Experience</span>
+                <span class="info-value">5+ Years</span>
               </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Experience:</h5> 3 Years
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="info-label">Location</span>
+                <span class="info-value">Bangladesh (UTC+6)</span>
               </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Phone:</h5> +8801960910540
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span class="info-label">Phone</span>
+                <span class="info-value">+880 1960910540</span>
               </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Email:</h5> abdullahfoysal32@gmail.com
-              </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Address:</h5> Dhaka, Bangladesh
-              </div>
-              <div class="col-sm-6 py-1">
-                <h5 class="d-inline text-primary">Timezone:</h5> UTC+6
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span class="info-label">Email</span>
+                <span class="info-value">abdullahfoysal32@gmail.com</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- About End -->
-
-
-      <!-- Skills Start -->
-      <div class="container bg-white py-5">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Skills</h2>
-          </div>
-          <div class="col-sm-6">
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <p class="mb-2">Android</p>
-                <!-- <p class="mb-2">95%</p> -->
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                  aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <p class="mb-2">IOS (swift)</p>
-                <!-- <p class="mb-2">90%</p> -->
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                  aria-valuemax="100"></div>
-              </div>
-            </div>
-            <!-- <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">PHP</p>
-                                    <p class="mb-2">90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div> -->
-          </div>
-          <div class="col-sm-6">
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <p class="mb-2">Flutter</p>
-                <!-- <p class="mb-2">99%</p> -->
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="95" aria-valuemin="0"
-                  aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="skill mb-4">
-              <div class="d-flex justify-content-between">
-                <p class="mb-2">WatchOs</p>
-                <!-- <p class="mb-2">95%</p> -->
-              </div>
-              <div class="progress">
-                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="98" aria-valuemin="0"
-                  aria-valuemax="100"></div>
-              </div>
-            </div>
-            <!-- <div class="skill mb-4">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-2">Wordpress</p>
-                                    <p class="mb-2">85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div> -->
+        <div class="about-image" data-aos="fade-left">
+          <div class="experience-card">
+            <div class="exp-number">5+</div>
+            <div class="exp-text">Years of<br>Experience</div>
           </div>
         </div>
       </div>
-      <!-- Skills End -->
+    </div>
+  </section>
 
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">What I Know</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
 
-      <!-- Education Start -->
-      <div class="container bg-white py-5">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Expericence</h2>
+      <div class="skills-grid">
+        <!-- Frameworks & Platforms -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="category-title">
+            <i class="fas fa-layer-group"></i>
+            Frameworks & Platforms
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Flutter</span>
+            <span class="skill-tag primary">iOS (Swift)</span>
+            <span class="skill-tag primary">WatchOS</span>
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Native Android</span>
           </div>
-          <div class="col-12">
-            <div class="border-left border-primary pt-2 pl-4 ml-2">
-              <div class="position-relative mb-4">
-                <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                <h5 class="mb-1">Software Engineer</h5>
-                <p class="mb-2">Kaz Software Ltd. | <small>July 2024 - current . 5 m</small></p>
-                <p>
-                  <li><small>Lead Flutter Engineer at FBP UK Team</small></li>
-                  <li><small>White Labeling application</small></li>
-                  <li><small>Follow SOLID principal,Clean Architecture, MVC, MVVM</small></li>
-                  <li><small> CI/CD</small></li>
-                  <li><small>
-                      <bold>Platforms: </bold>IOS · WatchOs · Android · Flutter-Dart
-                    </small></li>
-                  <li><small>
-                      <bold>Skills: </bold>Firebase . State Management (Bloc, provider, stream, stacked framework) · Git
-                    </small></li>
-                  <li>
-                    <a href="https://apps.apple.com/qa/app/fbp-gym/id6503006025">
-                      <button style='font-size:18px'>FBP GYM <i class='fab fa-app-store'></i></button>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://apps.apple.com/qa/app/tailormade-coaching-bansha/id6670205832">
-                      <button style='font-size:18px'>Tailormade Coaching gym <i class='fab fa-app-store'></i></button>
-                    </a>
-                  </li>
+        </div>
 
+        <!-- Programming Languages -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="category-title">
+            <i class="fas fa-code"></i>
+            Languages
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Dart</span>
+            <span class="skill-tag primary">Swift</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Bash</span>
+          </div>
+        </div>
 
-                </p>
-              </div>
-              <div class="position-relative mb-4">
-                <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                <h5 class="mb-1">Associate Software Engineer</h5>
-                <p class="mb-2">Kaz Software Ltd. | <small>Mar 2022 - July 2024 . 2 y</small></p>
-                <p>
-                  <li><small>Work on Production grade applications</small></li>
-                  <li><small>Follow SOLID principal,Clean Architecture, MVC, MVVM</small></li>
-                  <li><small> Successfully published apps on Google Play Store & App Store</small></li>
-                  <li><small>
-                      <bold>Platforms: </bold>IOS · WatchOs Development · Android Development · Flutter-Dart
-                    </small></li>
-                  <li><small>
-                      <bold>Skills: </bold>REST API integrate · NOSQL · SQL · Database Migration · Google Maps API · Git
-                    </small></li>
-                  <li>
-                    <a href="https://apps.apple.com/us/app/hakma-muslim-kids-reader-tv/id6446335154">
-                      <button style='font-size:18px'>Book Reader App <i class='fab fa-app-store'></i></button>
-                    </a>
-                  </li>
+        <!-- Architecture & Patterns -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="category-title">
+            <i class="fas fa-sitemap"></i>
+            Architecture & Patterns
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Clean Architecture</span>
+            <span class="skill-tag">MVVM</span>
+            <span class="skill-tag">MVC</span>
+            <span class="skill-tag">MVP</span>
+            <span class="skill-tag">SOLID Principles</span>
+            <span class="skill-tag">BLoC Pattern</span>
+          </div>
+        </div>
 
+        <!-- Database & Backend -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="category-title">
+            <i class="fas fa-database"></i>
+            Database & Backend
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag primary">Firebase</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Hive</span>
+            <span class="skill-tag">REST API</span>
+          </div>
+        </div>
 
-                </p>
-              </div>
-              <div class="position-relative mb-4">
-                <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                <h5 class="mb-1">Software Engineer (Intern)</h5>
-                <p class="mb-2">Kaz Software Ltd. | <small>Sep 2021 - Feb 2022 . 6 mo</small></p>
-                <p>
-                  <li><small>This is a six-month internship included in my undergrad curriculum.</small></li>
-                  <li><small>Designed a feature-heavy Mobile application using Flutter and other technologies</small>
-                  </li>
-                  <li><small>Integrate features of that Mobile application with REST API backend</small></li>
-                  <li><small>
-                      <bold>Platforms: </bold>Android Development · Flutter-Dart
-                    </small></li>
-                  <li><small>Skills: REST API integrate · NOSQL · SQL · Google Maps API · Git</small></li>
-                  <li>
-                    <a href="https://play.google.com/store/apps/details?id=com.swe.evv">
-                      <button style='font-size:18px'>EVV App <i class='fab fa-google-play'></i></button>
-                    </a>
-                  </li>
+        <!-- CI/CD & DevOps -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="category-title">
+            <i class="fas fa-rocket"></i>
+            CI/CD & DevOps
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Fastlane</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS CodeCommit</span>
+          </div>
+        </div>
 
-                </p>
-              </div>
-              <div class="position-relative mb-4">
-                <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                <h5 class="mb-1">Flutter Developer </h5>
-                <p class="mb-2">InnovexIT | <small>Apr 2020 - Jul 2020 . 3 mo</small></p>
+        <!-- Tools & Others -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+          <h3 class="category-title">
+            <i class="fas fa-tools"></i>
+            Tools & Project Management
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">GitLab</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Stripe Integration</span>
+            <span class="skill-tag">HealthKit</span>
+            <span class="skill-tag">GitHub Copilot</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <p>
-                  <li><small>UI Design & api integration</small></li>
-                  <li><small>
-                      <bold>Platforms: </bold>Flutter-Dart
-                    </small></li>
-                  <li><small>Worked as a Freelancer</small></li>
+  <!-- Experience Section -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">My Journey</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
 
-                </p>
-              </div>
-              <div class="position-relative mb-4">
-                <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
-                <h5 class="mb-1">Team Lead</h5>
-                <p class="mb-2">Mekao (startup) | <small>Jul 2020 - Jul 2021</small></p>
-                <p>
+      <div class="timeline">
+        <!-- Current Position -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-marker current">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">
+                <i class="fas fa-calendar"></i>
+                Jun 2024 – Present
+              </span>
+              <span class="timeline-badge current">Current</span>
+            </div>
+            <h3 class="timeline-title">Software Engineer</h3>
+            <h4 class="timeline-company">
+              <i class="fas fa-building"></i>
+              Kaz Software Ltd. · Remote, Worthing, England
+            </h4>
+            <ul class="timeline-details">
+              <li>Lead Flutter Developer at Fitness Business Profits (FBP UK Team)</li>
+              <li>Built, released, and scaled platform now driving <strong>60+ production-ready apps</strong> on App Store and Google Play</li>
+              <li>Automated app building workflows using Bash scripts, GitHub Actions, and Fastlane</li>
+              <li>Stripe integration: one-time payments, subscriptions, and membership purchases</li>
+              <li>Rebuilt iOS admin and user apps in Flutter with scalable white-label architecture</li>
+              <li>AI-driven development using GitHub Copilot and prompt engineering</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Flutter</span>
+              <span>Swift</span>
+              <span>Firebase</span>
+              <span>Stripe</span>
+              <span>GitHub Actions</span>
+            </div>
+            <div class="timeline-apps">
+              <a href="https://apps.apple.com/qa/app/fbp-gym/id6503006025" target="_blank" class="app-link">
+                <i class="fab fa-app-store"></i> FBP GYM
+              </a>
+              <a href="https://apps.apple.com/qa/app/tailormade-coaching-bansha/id6670205832" target="_blank" class="app-link">
+                <i class="fab fa-app-store"></i> Tailormade Coaching
+              </a>
+            </div>
+          </div>
+        </div>
 
-                  <li><small>Requirement analysis to Deployment & maintenance</small></li>
-                  <li><small>Released Admin & customer MVP 2 applications</small></li>
-                  <li><small>
-                      <bold>Platforms: </bold>Android Development · Flutter-Dart
-                    </small></li>
-                  <li><small>Tech: Flutter,Dart,Firebase,Git</small></li>
-                  <!-- <li>
-                    <a href="https://play.google.com/store/apps/details?id=com.technician.summary.client_tsp_v2">
-                      <button style='font-size:18px'>Mekao App <i class='fab fa-google-play'></i></button>
-                    </a>
-                  </li> -->
+        <!-- Associate Software Engineer -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-marker">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">
+                <i class="fas fa-calendar"></i>
+                Mar 2022 – Jul 2024
+              </span>
+              <span class="timeline-duration">2 years 4 months</span>
+            </div>
+            <h3 class="timeline-title">Associate Software Engineer</h3>
+            <h4 class="timeline-company">
+              <i class="fas fa-building"></i>
+              Kaz Software Ltd. · Hybrid, Dhaka, Bangladesh
+            </h4>
+            <ul class="timeline-details">
+              <li>Delivered iOS + WatchOS Health Monitoring app using Swift & HealthKit in 5 months</li>
+              <li>Built Flutter Book/Quiz app HAKMA achieving <strong>2K subscriptions</strong> with <strong>100K+ downloads</strong></li>
+              <li>Built Hatil e-commerce iOS native app with Combine, earning <strong>4.7 rating</strong></li>
+              <li>Led Flutter development for Patient Care WebEVV from UI design to production deployment</li>
+              <li>Mentored intern developers in Flutter best practices, improving team productivity</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Swift</span>
+              <span>HealthKit</span>
+              <span>Flutter</span>
+              <span>Combine</span>
+              <span>Firebase</span>
+            </div>
+            <div class="timeline-apps">
+              <a href="https://apps.apple.com/us/app/hakma-muslim-kids-reader-tv/id6446335154" target="_blank" class="app-link">
+                <i class="fab fa-app-store"></i> HAKMA Book Reader
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.swe.evv" target="_blank" class="app-link">
+                <i class="fab fa-google-play"></i> EVV App
+              </a>
+            </div>
+          </div>
+        </div>
 
-                </p>
-              </div>
+        <!-- Intern -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-marker">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">
+                <i class="fas fa-calendar"></i>
+                Sep 2021 – Feb 2022
+              </span>
+              <span class="timeline-duration">6 months</span>
+            </div>
+            <h3 class="timeline-title">Software Engineer Intern</h3>
+            <h4 class="timeline-company">
+              <i class="fas fa-building"></i>
+              Kaz Software Ltd. · Dhaka, Bangladesh
+            </h4>
+            <ul class="timeline-details">
+              <li>Six-month internship as part of undergrad curriculum</li>
+              <li>Designed feature-rich mobile application using Flutter</li>
+              <li>Integrated features with REST API backend</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>REST API</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- InnovexIT -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-marker">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">
+                <i class="fas fa-calendar"></i>
+                Apr 2021 – Jul 2021
+              </span>
+              <span class="timeline-duration">4 months</span>
+            </div>
+            <h3 class="timeline-title">Flutter Developer</h3>
+            <h4 class="timeline-company">
+              <i class="fas fa-building"></i>
+              InnovexIT · Onsite, Sylhet, Bangladesh
+            </h4>
+            <ul class="timeline-details">
+              <li>Designed and developed Flutter Rider App UI for smooth user experience</li>
+              <li>Performed critical bug fixes and UI enhancements</li>
+              <li>Improved app functionality, performance, and user experience</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mekao Startup -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="timeline-marker">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-date">
+                <i class="fas fa-calendar"></i>
+                Jul 2020 – Jul 2021
+              </span>
+              <span class="timeline-duration">1 year</span>
+            </div>
+            <h3 class="timeline-title">Flutter Developer & Team Lead</h3>
+            <h4 class="timeline-company">
+              <i class="fas fa-building"></i>
+              Mekao (Startup) · Remote, Chittagong, Bangladesh
+            </h4>
+            <ul class="timeline-details">
+              <li>Built multi-service provider app connecting technicians with customers</li>
+              <li>Developed admin monitoring dashboard for seamless operations</li>
+              <li>Spearheaded the project from MVP to production in 12 months</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Firebase</span>
+              <span>Leadership</span>
             </div>
           </div>
         </div>
       </div>
-      <!-- Education End -->
+    </div>
+  </section>
 
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">My Work</span>
+        <h2 class="section-title">Personal Projects</h2>
+      </div>
 
-      <!-- Projects Start -->
-      <div class="container bg-white py-5">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Personal Projects</h2>
+      <div class="projects-grid">
+        <!-- MathOlympiad -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="img/projects/mathOlympiad/1.png" alt="MathOlympiad App">
+            <div class="project-overlay">
+              <a href="https://github.com/Abdullahfoysal/MathOlympiad" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
-          <div class="col-12">
-            <div class="project-item-container">
-              <!-- Project 1 -->
-              <!-- Project Item Start -->
-              <div class="project-card">
-                <div class="project-details">
-                  <h5 class="project-title">MathOlympiad Android App</h5>
-                  <p class="project-subtitle">Problem Solving Platform</p>
-                  <p class="project-subtitle">Tools: Flutter-Dart, Firebase, Git</p>
+          <div class="project-content">
+            <h3 class="project-title">MathOlympiad App</h3>
+            <p class="project-description">
+              Online problem-solving platform with admin panel. Features user authentication,
+              problem submission, and real-time scoring system.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Abdullahfoysal/MathOlympiad" target="_blank" class="btn btn-sm">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
 
-                  <button onclick="openPopup()" class="project-button">View <i class="fab fa-google-play"></i></button>
+        <!-- Autonomous Car -->
+        <div class="project-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-badge">Research Project</div>
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-car"></i>
+            </div>
+            <div class="project-overlay">
+              <span class="coming-soon">In Progress</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Autonomous Car Prototype</h3>
+            <p class="project-description">
+              Lane Detection, Obstacle Detection, and Road Sign Recognition using Raspberry Pi,
+              Image Processing, and Deep Learning. Behavioral cloning for autonomous driving.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Deep Learning</span>
+              <span>Raspberry Pi</span>
+              <span>Computer Vision</span>
+            </div>
+            <div class="project-status">
+              <i class="fas fa-clock"></i> Jul 2025 - Present
+            </div>
+          </div>
+        </div>
+
+        <!-- File Transfer FTP -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Abdullahfoysal/fileTransferFTP" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">File Transfer FTP</h3>
+            <p class="project-description">
+              Robust socket connection management ensuring reliable data transmission between
+              client and server. Upload, download, and delete files from server.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Socket Programming</span>
+              <span>Networking</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Abdullahfoysal/fileTransferFTP" target="_blank" class="btn btn-sm">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Run For Life -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/Abdullahfoysal/Run_For_Life" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Run For Life 2D Game</h3>
+            <p class="project-description">
+              A C++ game using SFML library featuring mission-based challenges, player controls,
+              and cross-platform support for Linux and Windows.
+            </p>
+            <div class="project-tech">
+              <span>C++</span>
+              <span>SFML</span>
+              <span>Game Dev</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Abdullahfoysal/Run_For_Life" target="_blank" class="btn btn-sm">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Published Apps Section -->
+  <section class="section apps" id="apps">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Live on Stores</span>
+        <h2 class="section-title">Published Apps</h2>
+        <p class="section-description">Production-ready applications available on App Store and Google Play</p>
+      </div>
+
+      <div class="apps-showcase">
+        <!-- FBP Platform -->
+        <div class="app-card featured" data-aos="fade-up">
+          <div class="app-icon">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <div class="app-content">
+            <div class="app-header">
+              <h3>FBP White-Label Platform</h3>
+              <span class="app-badge">60+ Apps</span>
+            </div>
+            <p class="app-description">
+              Scalable fitness app platform serving multiple gym and coaching businesses.
+              Features include workout tracking, membership management, payment processing via Stripe,
+              and personalized coaching tools.
+            </p>
+            <div class="app-stats">
+              <div class="app-stat">
+                <i class="fab fa-app-store"></i>
+                <span>60+ iOS Apps</span>
+              </div>
+              <div class="app-stat">
+                <i class="fab fa-google-play"></i>
+                <span>Multiple Android Apps</span>
+              </div>
+            </div>
+            <div class="app-links">
+              <a href="https://apps.apple.com/qa/app/fbp-gym/id6503006025" target="_blank" class="store-btn ios">
+                <i class="fab fa-apple"></i>
+                <div>
+                  <span class="store-label">Download on the</span>
+                  <span class="store-name">App Store</span>
                 </div>
-              </div>
-              <!-- Project Item End -->
-              <!-- Project Item Start -->
-              <div class="project-card">
-                <div class="project-details">
-                  <h5 class="project-title">Run For Life 2D Game</h5>
-                  <p class="project-subtitle">Running,Shooting,Level challenge</p>
-                  <p class="project-subtitle">Tools: C++,SFML Library, Git</p>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                  <button onclick="openUrl('https://github.com/Abdullahfoysal/Run_For_Life')"
-                    class="project-button">View <i class="fab fa-github"></i></button>
+        <!-- HAKMA -->
+        <div class="app-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="app-icon">
+            <i class="fas fa-book-reader"></i>
+          </div>
+          <div class="app-content">
+            <div class="app-header">
+              <h3>HAKMA Muslim Kids Reader TV</h3>
+              <span class="app-badge success">100K+ Downloads</span>
+            </div>
+            <p class="app-description">
+              Educational book and quiz content app for children. Features interactive reading,
+              quizzes, and engaging content to promote learning.
+            </p>
+            <div class="app-stats">
+              <div class="app-stat">
+                <i class="fas fa-download"></i>
+                <span>100K+ Downloads</span>
+              </div>
+              <div class="app-stat">
+                <i class="fas fa-users"></i>
+                <span>2K+ Subscriptions</span>
+              </div>
+            </div>
+            <div class="app-links">
+              <a href="https://apps.apple.com/us/app/hakma-muslim-kids-reader-tv/id6446335154" target="_blank" class="store-btn ios">
+                <i class="fab fa-apple"></i>
+                <div>
+                  <span class="store-label">Download on the</span>
+                  <span class="store-name">App Store</span>
                 </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hatil -->
+        <div class="app-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="app-icon">
+            <i class="fas fa-couch"></i>
+          </div>
+          <div class="app-content">
+            <div class="app-header">
+              <h3>Hatil E-commerce</h3>
+              <span class="app-badge">4.7 ★ Rating</span>
+            </div>
+            <p class="app-description">
+              iOS native e-commerce application for furniture retailer Hatil. Built with Swift and Combine
+              framework with robust architecture for seamless shopping experience.
+            </p>
+            <div class="app-stats">
+              <div class="app-stat">
+                <i class="fas fa-star"></i>
+                <span>4.7 Rating</span>
               </div>
+              <div class="app-stat">
+                <i class="fab fa-swift"></i>
+                <span>Native iOS</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-
+        <!-- EVV App -->
+        <div class="app-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="app-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div class="app-content">
+            <div class="app-header">
+              <h3>Patient Care WebEVV</h3>
+              <span class="app-badge android">Android</span>
+            </div>
+            <p class="app-description">
+              Electronic Visit Verification app for healthcare providers. Enables real-time
+              visit tracking, patient care documentation, and compliance reporting.
+            </p>
+            <div class="app-links">
+              <a href="https://play.google.com/store/apps/details?id=com.swe.evv" target="_blank" class="store-btn android">
+                <i class="fab fa-google-play"></i>
+                <div>
+                  <span class="store-label">GET IT ON</span>
+                  <span class="store-name">Google Play</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Projects End -->
+    </div>
+  </section>
 
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">What Others Say</span>
+        <h2 class="section-title">Testimonials</h2>
+      </div>
 
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="testimonial-text">
+            Good Developer with high responsibility, having problem solving ability & mindsets.
+            In one word, working as a true Team player.
+          </p>
+          <div class="testimonial-author">
+            <img src="img/testimonial/belal.jpg" alt="Md. Hozrot Belal">
+            <div class="author-info">
+              <h4>Md. Hozrot Belal</h4>
+              <p>Team Lead at KAZ Software | Android | Kotlin | Flutter Developer</p>
+            </div>
+          </div>
+        </div>
 
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="testimonial-text">
+            Abdullah is a skilled and dedicated mobile app developer with strong expertise in Android and Flutter.
+            He consistently delivers quality work and is a valuable team member.
+          </p>
+          <div class="testimonial-author">
+            <img src="img/testimonial/panday-bhai.jpg" alt="Biswajit Panday">
+            <div class="author-info">
+              <h4>Biswajit Panday</h4>
+              <p>Senior Developer at Optimizely | .NET & Full-Stack Specialist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Subscribe Start -->
-      <!-- <div class="container bg-white py-5 px-0">
-        <div class="bg-primary text-center p-5">
-          <h1 class="text-white font-weight-bold">Subscribe My Newsletter</h1>
-          <p class="text-white">Subscribe and get my latest article in your inbox</p>
-          <form class="form-inline justify-content-center">
-            <div class="input-group">
-              <input type="text" class="form-control border-0 p-4" placeholder="Your Email">
-              <div class="input-group-append">
-                <button class="btn btn-dark px-4" type="submit">Subscribe</button>
+  <!-- Education & Certifications -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Background</span>
+        <h2 class="section-title">Education & Certifications</h2>
+      </div>
+
+      <div class="education-grid">
+        <!-- Education -->
+        <div class="education-card" data-aos="fade-up">
+          <div class="edu-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="edu-content">
+            <h3>B.Sc. in Software Engineering</h3>
+            <h4>Shahjalal University of Science and Technology, Sylhet</h4>
+            <p class="edu-date">Feb 2018 – Jan 2023</p>
+            <p class="edu-grade">CGPA: 3.39/4.00</p>
+            <div class="edu-courses">
+              <strong>Relevant Courses:</strong> Data Structures & Algorithms, Software Architecture & Design Patterns,
+              Machine Learning, Artificial Intelligence, Data Science
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certifications-list" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="cert-title">
+            <i class="fas fa-certificate"></i>
+            Certifications
+          </h3>
+          <div class="cert-items">
+            <div class="cert-item">
+              <i class="fab fa-flutter"></i>
+              <span>Introduction to Flutter Development Using Dart</span>
+              <span class="cert-year">2020</span>
+            </div>
+            <div class="cert-item">
+              <i class="fab fa-apple"></i>
+              <span>The Complete iOS App Development Bootcamp</span>
+              <span class="cert-year">2023</span>
+            </div>
+            <div class="cert-item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git: Branches, Merges, and Remotes</span>
+              <span class="cert-year">2021</span>
+            </div>
+            <div class="cert-item">
+              <i class="fab fa-docker"></i>
+              <span>Docker for the Absolute Beginner - DevOps</span>
+              <span class="cert-year">2021</span>
+            </div>
+            <div class="cert-item">
+              <i class="fas fa-car"></i>
+              <span>The Complete Self-Driving Car Course - Deep Learning</span>
+              <span class="cert-year">2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Strengths -->
+      <div class="strengths-section" data-aos="fade-up">
+        <h3 class="strengths-title">
+          <i class="fas fa-award"></i>
+          Leadership & Achievements
+        </h3>
+        <div class="strengths-grid">
+          <div class="strength-item">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4>Industry Expert Training</h4>
+            <p>Delivered 60 hours of Python training at SUST (EDGE Program)</p>
+          </div>
+          <div class="strength-item">
+            <i class="fas fa-brain"></i>
+            <h4>Technical Sessions</h4>
+            <p>Conducted Neural Network session at KAZ Software</p>
+          </div>
+          <div class="strength-item">
+            <i class="fas fa-users"></i>
+            <h4>Mentorship</h4>
+            <p>Mentored intern developers in Flutter best practices</p>
+          </div>
+          <div class="strength-item">
+            <i class="fas fa-trophy"></i>
+            <h4>Scholarship Awardee</h4>
+            <p>National Primary School Talent Pool Scholarship (2008)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-description">Have a project in mind? Let's work together!</p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:abdullahfoysal32@gmail.com">abdullahfoysal32@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <a href="tel:+8801960910540">+880 1960910540</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Dhaka, Bangladesh (UTC+6)</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/Abdullahfoysal" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abdullahfoysal/" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/@studytab4827" target="_blank" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mojvgqwq" method="POST">
+            <input type="hidden" name="_subject" value="New Contact from Portfolio">
+            <input type="hidden" name="_next" value="https://abdullahfoysal.github.io/index.html#contact">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
               </div>
             </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
           </form>
         </div>
-      </div> -->
-      <!-- Subscribe End -->
-
-
-      <!-- Services Start -->
-      <div class="container bg-white pt-5 pb-3">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Services</h2>
-          </div>
-          <div class="col-md-6 service-item text-center mb-3">
-            <i class="fab fa-app-store fa-2x mx-auto mb-4"></i>
-            <!--                            <i class="fa fa-2x fa-laptop-code mx-auto mb-4"></i>-->
-            <h5 class="mb-2">IOS Apps Development</h5>
-            <p>Assist on Requirement analysis to Deployments and maintenance.Working experience on Swift-UI</p>
-          </div>
-          <div class="col-md-6 service-item text-center mb-3">
-
-            <i class="mx-auto mb-4">
-              <img src="img/watchos.png" alt="Image description" style="width: 3em; height: 3em;">
-            </i>
-            <h5 class="mb-2">WatchOs Apps Development</h5>
-            <p>Assist on Requirement analysis to Deployments and maintenance.Working experience on Swift-UI</p>
-          </div>
-
-          <div class="col-md-6 service-item text-center mb-3">
-            <i class="fab fa-2x fa-android mx-auto mb-4"></i>
-            <h5 class="mb-2">Android Apps Development</h5>
-            <p>Assist on Requirement analysis to Deployments and maintenance.Working experience on Java,Kotlin</p>
-          </div>
-          <div class="col-md-6 service-item text-center mb-3">
-            <i class="mx-auto mb-4">
-              <img src="img/flutter.png" alt="Image description" style="width: 2em; height: 2em;">
-            </i>
-            <h5 class="mb-2">Flutter Apps Developement</h5>
-            <p>Proven experience and can Assist on Requirement analysis to Deployments and maintenance.Working
-              experience 3+ year</p>
-          </div>
-
-
-
-        </div>
       </div>
-      <!-- Services End -->
-
-
-      <!-- Portfolio Start -->
-      <div class="container bg-white pt-5 pb-3">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Certificates</h2>
-          </div>
-          <div class="col-12">
-            <div class="row">
-              <div class="col-12 text-center mb-2">
-                <ul class="list-inline mb-4" id="portfolio-flters">
-                  <li class="btn btn-outline-primary active" data-filter="*"><i class="fa fa-star mr-2"></i>All</li>
-                  <li class="btn btn-outline-primary" data-filter=".first"><i class="fa fa-laptop-code mr-2"></i>DevOps
-                  </li>
-                  <li class="btn btn-outline-primary" data-filter=".second"><i
-                      class="fa fa-mobile-alt mr-2"></i>Development</li>
-                </ul>
-              </div>
-            </div>
-            <div class="row portfolio-container">
-
-              <div class="col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                  <img class="img-fluid w-100" src="img/certificates/portfolio-1.jpg" alt="">
-                  <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                    <a href="img/certificates/portfolio-1.jpg" data-lightbox="portfolio">
-                      <i class="fa fa-4x fa-plus text-white"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                  <img class="img-fluid w-100" src="img/certificates/portfolio-2.jpg" alt="">
-                  <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                    <a href="img/certificates/portfolio-2.jpg" data-lightbox="portfolio">
-                      <i class="fa fa-4x fa-plus text-white"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4 portfolio-item first">
-                <div class="position-relative overflow-hidden mb-2">
-                  <img class="img-fluid w-100" src="img/certificates/portfolio-3.jpg" alt="">
-                  <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                    <a href="img/certificates/portfolio-3.jpg" data-lightbox="portfolio">
-                      <i class="fa fa-4x fa-plus text-white"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                  <img class="img-fluid w-100" src="img/certificates/portfolio-4.jpg" alt="">
-                  <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                    <a href="img/certificates/portfolio-4.jpg" data-lightbox="portfolio">
-                      <i class="fa fa-4x fa-plus text-white"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4 portfolio-item second">
-                <div class="position-relative overflow-hidden mb-2">
-                  <img class="img-fluid w-100" src="img/certificates/flutter.jpg" alt="">
-                  <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                    <a href="img/certificates/flutter.jpg" data-lightbox="portfolio">
-                      <i class="fa fa-4x fa-plus text-white"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Portfolio End -->
-
-
-      <!-- Testimonial Start -->
-      <div class="container bg-white py-5">
-        <div class="row px-3">
-          <div class="col-12">
-            <h2 class="title position-relative pb-2 mb-4">Testimonial</h2>
-          </div>
-          <div class="col-12">
-            <div class="owl-carousel testimonial-carousel">
-              <div class="text-left">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="text-body mb-4">Good Developer with high responsibility, Having Problem solving ability &
-                  mindsets. In one word Working as the Team player.
-                </h4>
-                <div class="d-flex align-items-center">
-                  <img class="img-fluid" src="img/testimonial/belal.jpg" style="width: 60px; height: 60px;">
-                  <div class="pl-3">
-                    <h5 class="text-primary m-0">Md. Hozrot Belal
-                    </h5>
-                    <i>Team Lead at KAZ Softare | Android | Kotlin | Flutter Developer</i>
-                  </div>
-                </div>
-              </div>
-              <div class="text-left">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="text-body mb-4">
-                  Abdullah is a skilled and dedicated mobile app developer with strong expertise in Android and Flutter.
-                  He consistently delivers quality work and is a valuable team member.
-                </h4>
-                <div class="d-flex align-items-center">
-                  <img class="img-fluid" src="img/testimonial/panday-bhai.jpg" style="width: 60px; height: 60px;">
-                  <div class="pl-3">
-                    <h5 class="text-primary m-0">Biswajit Panday</h5>
-                    <i>Senior Developer at Optimizely | .NET & Full-Stack Specialist | C#, ASP.NET Core, Blazor, React |
-                      Microservices & Cloud
-                      Solutions (AWS & Azure)</i>
-                  </div>
-                </div>
-              </div>
-              <div class="text-left">
-                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                <h4 class="text-body mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et
-                  eos labore, stet justo sed est sed. Diam sed sed dolor stet accusam amet eirmod eos, labore diam clita
-                </h4>
-                <div class="d-flex align-items-center">
-                  <img class="img-fluid" src="img/testimonial/ullash-bhai.jpg" style="width: 60px; height: 60px;">
-                  <div class="pl-3">
-                    <h5 class="text-primary m-0">Ullash Podder</h5>
-                    <i>Software Engineer at FBP | Transforming Client Engagement | Passionate about Creating
-                      User-Centric Solutions 🚀</i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Testimonial End -->
-
-
-      <!-- Contact Start -->
-      <!--                <div class="container bg-white py-5" id="contact">-->
-      <!--                    <div class="row px-3">-->
-      <!--                        <div class="col-12">-->
-      <!--                            <h2 class="title position-relative pb-2 mb-4">Contact Me</h2>-->
-      <!--                        </div>-->
-      <!--                        <div class="col-12">-->
-      <!--                            <div class="contact-form">-->
-      <!--                                <div id="success"></div>-->
-      <!--                                <form name="sentMessage" id="contactForm" novalidate="novalidate">-->
-      <!--                                    <div class="form-row">-->
-      <!--                                        <div class="control-group col-sm-6">-->
-      <!--                                            <input type="text" class="form-control p-4" id="name" placeholder="Your Name"-->
-      <!--                                                required="required" data-validation-required-message="Please enter your name" />-->
-      <!--                                            <p class="help-block text-danger"></p>-->
-      <!--                                        </div>-->
-      <!--                                        <div class="control-group col-sm-6">-->
-      <!--                                            <input type="email" class="form-control p-4" id="email" placeholder="Your Email"-->
-      <!--                                                required="required" data-validation-required-message="Please enter your email" />-->
-      <!--                                            <p class="help-block text-danger"></p>-->
-      <!--                                        </div>-->
-      <!--                                    </div>-->
-      <!--                                    <div class="control-group">-->
-      <!--                                        <input type="text" class="form-control p-4" id="subject" placeholder="Subject"-->
-      <!--                                            required="required" data-validation-required-message="Please enter a subject" />-->
-      <!--                                        <p class="help-block text-danger"></p>-->
-      <!--                                    </div>-->
-      <!--                                    <div class="control-group">-->
-      <!--                                        <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"-->
-      <!--                                            required="required"-->
-      <!--                                            data-validation-required-message="Please enter your message"></textarea>-->
-      <!--                                        <p class="help-block text-danger"></p>-->
-      <!--                                    </div>-->
-      <!--                                    <div>-->
-      <!--                                        <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send Message</button>-->
-      <!--                                    </div>-->
-      <!--                                </form>-->
-      <!--                            </div>-->
-      <!--                        </div>-->
-      <!--                    </div>-->
-      <!--                </div>-->
-      <!-- Contact End -->
-
-
-      <!-- Footer Start -->
-      <div class="container-fluid bg-white pt-5 px-0">
-        <div class="container bg-dark text-light text-center py-5">
-          <div class="d-flex justify-content-center mb-4">
-            <a class="btn btn-outline-primary btn-square mr-2" href="https://github.com/Abdullahfoysal"
-              target="_blank"><i class="fab fa-github"></i></a>
-            <a class="btn btn-outline-primary btn-square mr-2" href="https://www.linkedin.com/in/abdullahfoysal"
-              target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-primary btn-square mr-2" href="https://www.youtube.com/@studytab4827"
-              target="_blank"><i class="fab fa-youtube"></i></a>
-
-          </div>
-          <div class="d-flex justify-content-center mb-3">
-            <a class="text-white" href="#">Privacy</a>
-            <span class="px-3">|</span>
-            <a class="text-white" href="#">Terms</a>
-            <span class="px-3">|</span>
-            <a class="text-white" href="#">FAQs</a>
-            <span class="px-3">|</span>
-            <a class="text-white" href="#">Help</a>
-          </div>
-          <p class="m-0">&copy; All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
-        </div>
-      </div>
-      <!-- Footer End -->
     </div>
-  </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-text">AF</span>
+          <p>Expert in Cross-Platform Mobile Development</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/Abdullahfoysal" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abdullahfoysal/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/@studytab4827" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abdullah Foysal. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Back to Top -->
-  <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+  <a href="#hero" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="lib/typed/typed.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-  <!-- Contact Javascript File -->
-  <script src="mail/jqBootstrapValidation.min.js"></script>
-  <script src="mail/contact.js"></script>
-
-  <!-- Template Javascript -->
   <script src="js/main.js"></script>
-  <style>
-    .project-card {
-      border: 1px solid #ddd;
-      /* Add a border for the card */
-      border-radius: 8px;
-      /* Add rounded corners */
-      overflow: hidden;
-      /* Hide any content that overflows the card */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      /* Add a subtle box shadow */
-      transition: transform 0.3s ease-in-out;
-      /* Add a smooth transition on hover */
-      margin-bottom: 20px;
-      /* Add some spacing between cards */
-    }
-
-    .project-card:hover {
-      transform: scale(1.05);
-      /* Enlarge the card on hover */
-    }
-
-    .project-details {
-      padding: 20px;
-      /* Add padding inside the card */
-    }
-
-    .project-title {
-      font-size: 1.5em;
-      /* Adjust the title font size */
-      margin-bottom: 10px;
-      /* Add some spacing below the title */
-    }
-
-    .project-subtitle {
-      margin-bottom: 5px;
-      /* Add some spacing below the subtitles */
-    }
-
-    .project-button {
-      background-color: #3498db;
-      /* Set button background color */
-      color: #fff;
-      /* Set button text color */
-      padding: 8px 15px;
-      /* Add padding to the button */
-      border: none;
-      /* Remove button border */
-      border-radius: 4px;
-      /* Add rounded corners to the button */
-      cursor: pointer;
-      /* Add a pointer cursor on hover */
-    }
-
-    .project-button:hover {
-      background-color: #2980b9;
-      /* Darken button color on hover */
-    }
-  </style>
 </body>
 
 </html>

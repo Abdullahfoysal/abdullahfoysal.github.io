@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <title>Autonomous Car Research | Abdullah Foysal</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="Autonomous Car - Research project using YOLO for self-driving car capabilities">
+
+  <link href="../img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+  <style>
+    .project-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      padding: 8rem 1.5rem 4rem;
+    }
+
+    .project-hero-content {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .project-hero-content {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .project-info h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg-secondary);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .meta-item i {
+      color: var(--primary);
+    }
+
+    .status-badge {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+    }
+
+    .project-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .project-icon {
+      width: 200px;
+      height: 200px;
+      background: var(--primary-gradient);
+      border-radius: var(--border-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--card-shadow-hover);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-icon::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 60%
+      );
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%); }
+      100% { transform: translateX(100%) translateY(100%); }
+    }
+
+    .project-icon i {
+      font-size: 5rem;
+      color: white;
+    }
+
+    .research-section {
+      background: var(--bg-secondary);
+      padding: var(--section-padding);
+    }
+
+    .research-overview {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .research-overview p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .objectives-section {
+      padding: var(--section-padding);
+    }
+
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .objective-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+
+    .objective-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .objective-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-gradient);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .objective-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .objective-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .tech-section {
+      background: var(--bg-secondary);
+      padding: var(--section-padding);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-fast);
+    }
+
+    .tech-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .tech-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .tech-item span {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .progress-section {
+      padding: var(--section-padding);
+    }
+
+    .progress-timeline {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .progress-item {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+
+    .progress-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .progress-marker {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .progress-marker.completed {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+
+    .progress-marker.in-progress {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .progress-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .progress-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-text">AF</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="project-hero-content">
+      <div class="project-info">
+        <h1>Autonomous Car Research</h1>
+        <div class="project-meta">
+          <span class="meta-item">
+            <i class="fas fa-calendar"></i>
+            Jan 2022 – Present
+          </span>
+          <span class="meta-item">
+            <i class="fas fa-tag"></i>
+            AI / Machine Learning
+          </span>
+          <span class="meta-item status-badge">
+            <i class="fas fa-spinner"></i>
+            In Progress
+          </span>
+        </div>
+        <p class="project-description">
+          An ongoing research project focused on developing autonomous driving capabilities
+          using YOLO (You Only Look Once) object detection algorithms. This project aims to
+          create a self-driving car system capable of real-time object detection and
+          decision-making for safe navigation.
+        </p>
+        <div class="project-links">
+          <a href="../index.html#projects" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i>
+            All Projects
+          </a>
+        </div>
+      </div>
+      <div class="project-preview">
+        <div class="project-icon">
+          <i class="fas fa-car"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Overview -->
+  <section class="research-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Overview</span>
+        <h2 class="section-title">Research Focus</h2>
+      </div>
+      <div class="research-overview">
+        <p>
+          This research project explores the application of deep learning and computer vision
+          technologies in autonomous vehicle systems. The primary focus is on implementing
+          YOLO-based object detection for real-time identification of vehicles, pedestrians,
+          traffic signs, and road conditions.
+        </p>
+        <p>
+          The project aims to develop a comprehensive perception system that can process
+          visual input from cameras and make decisions for safe navigation. This includes
+          lane detection, obstacle avoidance, and traffic sign recognition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Objectives -->
+  <section class="objectives-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Goals</span>
+        <h2 class="section-title">Research Objectives</h2>
+      </div>
+      <div class="objectives-grid">
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Object Detection</h3>
+          <p>Implement YOLO algorithm for real-time detection of vehicles, pedestrians, and obstacles.</p>
+        </div>
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-road"></i>
+          </div>
+          <h3>Lane Detection</h3>
+          <p>Develop algorithms to identify and track lane markings for path planning.</p>
+        </div>
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-traffic-light"></i>
+          </div>
+          <h3>Sign Recognition</h3>
+          <p>Train models to recognize and interpret traffic signs and signals.</p>
+        </div>
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Decision Making</h3>
+          <p>Build decision systems for navigation and obstacle avoidance.</p>
+        </div>
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>Real-time Processing</h3>
+          <p>Optimize algorithms for low-latency, real-time performance.</p>
+        </div>
+        <div class="objective-card">
+          <div class="objective-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Safety Systems</h3>
+          <p>Implement fail-safe mechanisms and emergency response protocols.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Technologies</span>
+        <h2 class="section-title">Technology Stack</h2>
+      </div>
+      <div class="tech-stack">
+        <div class="tech-item">
+          <i class="fab fa-python"></i>
+          <span>Python</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-project-diagram"></i>
+          <span>YOLO</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-robot"></i>
+          <span>TensorFlow</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-camera"></i>
+          <span>OpenCV</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-microchip"></i>
+          <span>NumPy</span>
+        </div>
+        <div class="tech-item">
+          <i class="fab fa-git-alt"></i>
+          <span>Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress -->
+  <section class="progress-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Timeline</span>
+        <h2 class="section-title">Research Progress</h2>
+      </div>
+      <div class="progress-timeline">
+        <div class="progress-item">
+          <div class="progress-marker completed">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-content">
+            <h4>Literature Review</h4>
+            <p>Comprehensive study of existing autonomous driving research and YOLO implementations.</p>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-marker completed">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="progress-content">
+            <h4>Dataset Collection</h4>
+            <p>Gathering and preprocessing training data for object detection models.</p>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-marker in-progress">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="progress-content">
+            <h4>Model Training</h4>
+            <p>Currently training and fine-tuning YOLO models for improved accuracy.</p>
+          </div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-marker">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div class="progress-content">
+            <h4>Integration & Testing</h4>
+            <p>System integration and real-world testing on prototype vehicle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-text">AF</span>
+          <p>Expert in Cross-Platform Mobile Development</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/Abdullahfoysal" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abdullahfoysal/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Abdullah Foysal. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top visible" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

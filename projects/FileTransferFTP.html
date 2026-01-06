@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Run For Life 2D Game | Abdullah Foysal</title>
+  <title>File Transfer FTP | Abdullah Foysal</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Run For Life - A 2D game built with C++ and SFML library">
+  <meta name="description" content="File Transfer FTP - A Java client-server application for file transfer">
 
   <link href="../img/favicon.ico" rel="icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,13 +80,13 @@
       gap: 1rem;
     }
 
-    .game-preview {
+    .project-preview {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .game-icon {
+    .project-icon {
       width: 200px;
       height: 200px;
       background: var(--primary-gradient);
@@ -97,13 +97,64 @@
       box-shadow: var(--card-shadow-hover);
     }
 
-    .game-icon i {
+    .project-icon i {
       font-size: 5rem;
       color: white;
     }
 
-    .features-section {
+    .architecture-section {
       background: var(--bg-secondary);
+      padding: var(--section-padding);
+    }
+
+    .architecture-diagram {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .arch-component {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .arch-component i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .arch-component h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .arch-component p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .arch-arrow {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .arch-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .features-section {
       padding: var(--section-padding);
     }
 
@@ -154,6 +205,7 @@
     }
 
     .tech-section {
+      background: var(--bg-secondary);
       padding: var(--section-padding);
     }
 
@@ -190,42 +242,46 @@
       color: var(--text-primary);
     }
 
-    .platforms-section {
-      background: var(--bg-secondary);
+    .protocols-section {
       padding: var(--section-padding);
     }
 
-    .platforms-grid {
-      display: flex;
-      justify-content: center;
+    .protocols-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      flex-wrap: wrap;
     }
 
-    .platform-card {
+    .protocol-card {
       background: var(--card-bg);
-      padding: 2rem 3rem;
+      padding: 2rem;
       border-radius: var(--border-radius-lg);
       box-shadow: var(--card-shadow);
       text-align: center;
       transition: all var(--transition-normal);
     }
 
-    .platform-card:hover {
+    .protocol-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--card-shadow-hover);
     }
 
-    .platform-card i {
-      font-size: 3rem;
+    .protocol-card i {
+      font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 1rem;
     }
 
-    .platform-card h4 {
+    .protocol-card h4 {
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .protocol-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
     }
   </style>
 </head>
@@ -261,28 +317,28 @@
   <section class="project-hero">
     <div class="project-hero-content">
       <div class="project-info">
-        <h1>Run For Life 2D Game</h1>
+        <h1>File Transfer FTP</h1>
         <div class="project-meta">
           <span class="meta-item">
             <i class="fas fa-calendar"></i>
-            Mar 2021 – Jun 2021
+            Nov 2019 – Dec 2019
           </span>
           <span class="meta-item">
             <i class="fas fa-tag"></i>
-            Game Development
+            Networking
           </span>
           <span class="meta-item">
-            <i class="fas fa-desktop"></i>
-            Cross-Platform
+            <i class="fas fa-server"></i>
+            Client-Server
           </span>
         </div>
         <p class="project-description">
-          A thrilling 2D action game developed in C++ using the SFML library. The game features
-          mission-based challenges where players must run, shoot, and navigate through increasingly
-          difficult levels. Built with cross-platform support for both Linux and Windows systems.
+          A robust client-server application built using Java socket programming. This project demonstrates
+          file transfer capabilities using FTP protocol over TCP connections. Features a multi-client
+          support system that allows simultaneous connections using thread pooling for optimal performance.
         </p>
         <div class="project-links">
-          <a href="https://github.com/Abdullahfoysal/Run_For_Life" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/Abdullahfoysal/FileTransferFTP" target="_blank" class="btn btn-primary">
             <i class="fab fa-github"></i>
             View on GitHub
           </a>
@@ -292,9 +348,38 @@
           </a>
         </div>
       </div>
-      <div class="game-preview">
-        <div class="game-icon">
-          <i class="fas fa-gamepad"></i>
+      <div class="project-preview">
+        <div class="project-icon">
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="architecture-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Design</span>
+        <h2 class="section-title">System Architecture</h2>
+      </div>
+      <div class="architecture-diagram">
+        <div class="arch-component">
+          <i class="fas fa-laptop"></i>
+          <h4>Client</h4>
+          <p>Request files</p>
+        </div>
+        <i class="fas fa-arrows-alt-h arch-arrow"></i>
+        <div class="arch-component">
+          <i class="fas fa-network-wired"></i>
+          <h4>TCP Connection</h4>
+          <p>Socket communication</p>
+        </div>
+        <i class="fas fa-arrows-alt-h arch-arrow"></i>
+        <div class="arch-component">
+          <i class="fas fa-server"></i>
+          <h4>Server</h4>
+          <p>Handle requests</p>
         </div>
       </div>
     </div>
@@ -304,51 +389,51 @@
   <section class="features-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-subtitle">Gameplay</span>
-        <h2 class="section-title">Game Features</h2>
+        <span class="section-subtitle">Capabilities</span>
+        <h2 class="section-title">Key Features</h2>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-running"></i>
+            <i class="fas fa-upload"></i>
           </div>
-          <h3>Running Mechanics</h3>
-          <p>Smooth and responsive player controls for an engaging running experience.</p>
+          <h3>File Upload</h3>
+          <p>Upload files from client to server with progress tracking.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-crosshairs"></i>
+            <i class="fas fa-download"></i>
           </div>
-          <h3>Shooting System</h3>
-          <p>Intuitive shooting mechanics to eliminate obstacles and enemies.</p>
+          <h3>File Download</h3>
+          <p>Download files from server with efficient streaming.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Multi-Client Support</h3>
+          <p>Handle multiple simultaneous client connections efficiently.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-layer-group"></i>
           </div>
-          <h3>Level Challenges</h3>
-          <p>Multiple levels with increasing difficulty and unique challenges.</p>
+          <h3>Thread Pooling</h3>
+          <p>Optimized resource management with thread pool implementation.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-tasks"></i>
+            <i class="fas fa-plug"></i>
           </div>
-          <h3>Mission-Based</h3>
-          <p>Complete various missions to progress through the game.</p>
+          <h3>Socket Programming</h3>
+          <p>Low-level network communication using Java sockets.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-keyboard"></i>
+            <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>Player Controls</h3>
-          <p>Intuitive keyboard controls for movement, jumping, and shooting.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
-          <h3>Performance</h3>
-          <p>Optimized for smooth gameplay with efficient rendering.</p>
+          <h3>Error Handling</h3>
+          <p>Robust error handling for connection failures and timeouts.</p>
         </div>
       </div>
     </div>
@@ -363,40 +448,47 @@
       </div>
       <div class="tech-stack">
         <div class="tech-item">
-          <i class="fas fa-code"></i>
-          <span>C++</span>
+          <i class="fab fa-java"></i>
+          <span>Java</span>
         </div>
         <div class="tech-item">
-          <i class="fas fa-gamepad"></i>
-          <span>SFML Library</span>
+          <i class="fas fa-network-wired"></i>
+          <span>Socket API</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-stream"></i>
+          <span>Multithreading</span>
         </div>
         <div class="tech-item">
           <i class="fab fa-git-alt"></i>
           <span>Git</span>
         </div>
-        <div class="tech-item">
-          <i class="fas fa-tools"></i>
-          <span>CMake</span>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Platforms -->
-  <section class="platforms-section">
+  <!-- Protocols -->
+  <section class="protocols-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-subtitle">Compatibility</span>
-        <h2 class="section-title">Supported Platforms</h2>
+        <span class="section-subtitle">Implementation</span>
+        <h2 class="section-title">Network Protocols</h2>
       </div>
-      <div class="platforms-grid">
-        <div class="platform-card">
-          <i class="fab fa-linux"></i>
-          <h4>Linux</h4>
+      <div class="protocols-grid">
+        <div class="protocol-card">
+          <i class="fas fa-file-export"></i>
+          <h4>FTP Protocol</h4>
+          <p>File Transfer Protocol for standardized file operations</p>
         </div>
-        <div class="platform-card">
-          <i class="fab fa-windows"></i>
-          <h4>Windows</h4>
+        <div class="protocol-card">
+          <i class="fas fa-link"></i>
+          <h4>TCP/IP</h4>
+          <p>Reliable connection-oriented data transmission</p>
+        </div>
+        <div class="protocol-card">
+          <i class="fas fa-handshake"></i>
+          <h4>Request-Response</h4>
+          <p>Structured communication pattern between client and server</p>
         </div>
       </div>
     </div>

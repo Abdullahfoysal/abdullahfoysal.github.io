@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Run For Life 2D Game | Abdullah Foysal</title>
+  <title>MathOlympiad App | Abdullah Foysal</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Run For Life - A 2D game built with C++ and SFML library">
+  <meta name="description" content="MathOlympiad - Online problem-solving platform built with Flutter and Firebase">
 
   <link href="../img/favicon.ico" rel="icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,26 +80,32 @@
       gap: 1rem;
     }
 
-    .game-preview {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .screenshots-section {
+      padding: var(--section-padding);
     }
 
-    .game-icon {
-      width: 200px;
-      height: 200px;
-      background: var(--primary-gradient);
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .screenshot-item {
       border-radius: var(--border-radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-normal);
+    }
+
+    .screenshot-item:hover {
+      transform: translateY(-10px);
       box-shadow: var(--card-shadow-hover);
     }
 
-    .game-icon i {
-      font-size: 5rem;
-      color: white;
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .features-section {
@@ -189,44 +195,6 @@
       font-weight: 600;
       color: var(--text-primary);
     }
-
-    .platforms-section {
-      background: var(--bg-secondary);
-      padding: var(--section-padding);
-    }
-
-    .platforms-grid {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .platform-card {
-      background: var(--card-bg);
-      padding: 2rem 3rem;
-      border-radius: var(--border-radius-lg);
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      transition: all var(--transition-normal);
-    }
-
-    .platform-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--card-shadow-hover);
-    }
-
-    .platform-card i {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .platform-card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
   </style>
 </head>
 
@@ -261,28 +229,28 @@
   <section class="project-hero">
     <div class="project-hero-content">
       <div class="project-info">
-        <h1>Run For Life 2D Game</h1>
+        <h1>MathOlympiad App</h1>
         <div class="project-meta">
           <span class="meta-item">
             <i class="fas fa-calendar"></i>
-            Mar 2021 – Jun 2021
+            Dec 2019 – Feb 2020
           </span>
           <span class="meta-item">
             <i class="fas fa-tag"></i>
-            Game Development
+            Personal Project
           </span>
           <span class="meta-item">
-            <i class="fas fa-desktop"></i>
-            Cross-Platform
+            <i class="fas fa-mobile-alt"></i>
+            Flutter
           </span>
         </div>
         <p class="project-description">
-          A thrilling 2D action game developed in C++ using the SFML library. The game features
-          mission-based challenges where players must run, shoot, and navigate through increasingly
-          difficult levels. Built with cross-platform support for both Linux and Windows systems.
+          An online problem-solving platform designed for math enthusiasts. The application features
+          user authentication, problem submission with real-time scoring, an admin panel for content
+          management, and a leaderboard system to track progress and competition among users.
         </p>
         <div class="project-links">
-          <a href="https://github.com/Abdullahfoysal/Run_For_Life" target="_blank" class="btn btn-primary">
+          <a href="https://github.com/Abdullahfoysal/MathOlympiad" target="_blank" class="btn btn-primary">
             <i class="fab fa-github"></i>
             View on GitHub
           </a>
@@ -292,9 +260,43 @@
           </a>
         </div>
       </div>
-      <div class="game-preview">
-        <div class="game-icon">
-          <i class="fas fa-gamepad"></i>
+      <div class="project-preview">
+        <img src="../img/projects/mathOlympiad/1.png" alt="MathOlympiad App Preview" style="max-width: 300px; border-radius: var(--border-radius-lg); box-shadow: var(--card-shadow-hover);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="screenshots-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">App Preview</span>
+        <h2 class="section-title">Screenshots</h2>
+      </div>
+      <div class="screenshots-grid">
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/1.png" alt="Screenshot 1">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/2.png" alt="Screenshot 2">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/3.png" alt="Screenshot 3">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/4.png" alt="Screenshot 4">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/5.png" alt="Screenshot 5">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/6.png" alt="Screenshot 6">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/7.png" alt="Screenshot 7">
+        </div>
+        <div class="screenshot-item">
+          <img src="../img/projects/mathOlympiad/8.png" alt="Screenshot 8">
         </div>
       </div>
     </div>
@@ -304,51 +306,51 @@
   <section class="features-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-subtitle">Gameplay</span>
-        <h2 class="section-title">Game Features</h2>
+        <span class="section-subtitle">What It Does</span>
+        <h2 class="section-title">Key Features</h2>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-running"></i>
+            <i class="fas fa-user-shield"></i>
           </div>
-          <h3>Running Mechanics</h3>
-          <p>Smooth and responsive player controls for an engaging running experience.</p>
+          <h3>User Authentication</h3>
+          <p>Secure login and registration system with Firebase Authentication for seamless user management.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-crosshairs"></i>
+            <i class="fas fa-puzzle-piece"></i>
           </div>
-          <h3>Shooting System</h3>
-          <p>Intuitive shooting mechanics to eliminate obstacles and enemies.</p>
+          <h3>Problem Solving</h3>
+          <p>Browse and solve math problems with varying difficulty levels and categories.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-layer-group"></i>
+            <i class="fas fa-chart-line"></i>
           </div>
-          <h3>Level Challenges</h3>
-          <p>Multiple levels with increasing difficulty and unique challenges.</p>
+          <h3>Real-time Scoring</h3>
+          <p>Instant feedback and scoring system to track your progress and performance.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-tasks"></i>
+            <i class="fas fa-cogs"></i>
           </div>
-          <h3>Mission-Based</h3>
-          <p>Complete various missions to progress through the game.</p>
+          <h3>Admin Panel</h3>
+          <p>Comprehensive admin dashboard for managing problems, users, and content.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-keyboard"></i>
+            <i class="fas fa-trophy"></i>
           </div>
-          <h3>Player Controls</h3>
-          <p>Intuitive keyboard controls for movement, jumping, and shooting.</p>
+          <h3>Leaderboard</h3>
+          <p>Competitive leaderboard to compare your scores with other participants.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-tachometer-alt"></i>
+            <i class="fas fa-cloud"></i>
           </div>
-          <h3>Performance</h3>
-          <p>Optimized for smooth gameplay with efficient rendering.</p>
+          <h3>Cloud Storage</h3>
+          <p>All data securely stored in Firebase Firestore with real-time synchronization.</p>
         </div>
       </div>
     </div>
@@ -363,40 +365,24 @@
       </div>
       <div class="tech-stack">
         <div class="tech-item">
-          <i class="fas fa-code"></i>
-          <span>C++</span>
+          <i class="fab fa-flutter"></i>
+          <span>Flutter</span>
         </div>
         <div class="tech-item">
-          <i class="fas fa-gamepad"></i>
-          <span>SFML Library</span>
+          <i class="fas fa-code"></i>
+          <span>Dart</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-fire"></i>
+          <span>Firebase</span>
+        </div>
+        <div class="tech-item">
+          <i class="fas fa-database"></i>
+          <span>Firestore</span>
         </div>
         <div class="tech-item">
           <i class="fab fa-git-alt"></i>
           <span>Git</span>
-        </div>
-        <div class="tech-item">
-          <i class="fas fa-tools"></i>
-          <span>CMake</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Platforms -->
-  <section class="platforms-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-subtitle">Compatibility</span>
-        <h2 class="section-title">Supported Platforms</h2>
-      </div>
-      <div class="platforms-grid">
-        <div class="platform-card">
-          <i class="fab fa-linux"></i>
-          <h4>Linux</h4>
-        </div>
-        <div class="platform-card">
-          <i class="fab fa-windows"></i>
-          <h4>Windows</h4>
         </div>
       </div>
     </div>
