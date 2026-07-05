@@ -113,10 +113,10 @@
     if (typedElement && typeof Typed !== 'undefined') {
       new Typed('#typed', {
         strings: [
+          'AI-Native Mobile Developer',
+          'Agent-Based Workflow Builder',
           'Flutter Developer',
           'iOS Developer',
-          'Android Developer',
-          'WatchOS Developer',
           'Cross-Platform Expert'
         ],
         typeSpeed: 50,
