@@ -917,64 +917,263 @@ ul {
   }
 }
 
-/* ===== Experience Section ===== */
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--border-color);
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 60px;
-  padding-bottom: 2rem;
-}
-
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 42px;
-  height: 42px;
+/* ===== Experience Section — Card Carousel ===== */
+.experience {
   background: var(--bg-secondary);
+}
+
+.experience .section-description {
+  max-width: 520px;
+  margin: 0.75rem auto 0;
+}
+
+/* Overview strip — career at a glance */
+.exp-overview {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.25rem 1.75rem;
+  margin-bottom: 0.5rem;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.exp-overview::-webkit-scrollbar {
+  display: none;
+}
+
+.exp-overview-item {
+  flex: 0 0 auto;
+  width: min(160px, 42vw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--card-bg);
   border: 2px solid var(--border-color);
-  border-radius: 50%;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--text-secondary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  scroll-snap-align: start;
+}
+
+.exp-overview-item:hover {
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.exp-overview-item.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: var(--card-bg);
+}
+
+.exp-overview-item.current.active {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.exp-overview-icon {
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: 8px;
   color: var(--text-muted);
-  z-index: 1;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
 }
 
-.timeline-marker.current {
+.exp-overview-item.active .exp-overview-icon {
   background: var(--primary);
-  border-color: var(--primary);
   color: white;
 }
 
-.timeline-content {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-color);
+.exp-overview-item.current.active .exp-overview-icon {
+  background: #22c55e;
 }
 
-.timeline-header {
+.exp-overview-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.exp-overview-company {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.exp-overview-date {
+  font-size: 0.65rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 0.125rem;
+}
+
+/* Carousel shell */
+.exp-carousel {
+  position: relative;
+}
+
+.exp-carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.exp-carousel-counter {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 3rem;
+  text-align: center;
+}
+
+.exp-carousel-counter #expCurrent {
+  color: var(--primary);
+  font-size: 1.125rem;
+}
+
+.exp-nav {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.exp-nav:hover:not(:disabled) {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.exp-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Scroll-snap track */
+.exp-carousel-viewport {
+  position: relative;
+  margin: 0 -0.5rem;
+}
+
+.exp-carousel-viewport::before,
+.exp-carousel-viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.exp-carousel-viewport::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary), transparent);
+}
+
+.exp-carousel-viewport::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
+
+.exp-carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 1rem;
+  padding: 0.5rem 1rem 1.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.exp-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.exp-carousel-track:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: var(--border-radius);
+}
+
+/* Experience cards */
+.exp-card {
+  flex: 0 0 calc(100% - 0.5rem);
+  scroll-snap-align: center;
+  display: flex;
+  gap: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  transition: opacity var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+  opacity: 0.55;
+  transform: scale(0.97);
+}
+
+.exp-card.active {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.exp-card-marker {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.exp-card-marker.current {
+  background: var(--primary-gradient);
+  border-color: transparent;
+  color: white;
+}
+
+.exp-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-card-header {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -982,7 +1181,7 @@ ul {
   margin-bottom: 0.75rem;
 }
 
-.timeline-date {
+.exp-card-date {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -990,7 +1189,7 @@ ul {
   color: var(--text-muted);
 }
 
-.timeline-badge {
+.exp-badge {
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
   font-size: 0.75rem;
@@ -999,26 +1198,28 @@ ul {
   color: var(--text-secondary);
 }
 
-.timeline-badge.current {
+.exp-badge.current {
   background: #22c55e;
   color: white;
 }
 
-.timeline-duration {
+.exp-duration {
   font-size: 0.875rem;
   color: var(--text-muted);
 }
 
-.timeline-title {
-  font-size: 1.25rem;
+.exp-card-title {
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.3;
 }
 
-.timeline-company {
+.exp-card-company {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.95rem;
   color: var(--primary);
@@ -1026,34 +1227,40 @@ ul {
   margin-bottom: 1rem;
 }
 
-.timeline-details {
+.exp-card-details {
   margin-bottom: 1rem;
-  padding-left: 1rem;
+  padding-left: 0;
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
 }
 
-.timeline-details li {
+.exp-card-details li {
   position: relative;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  padding-left: 1rem;
+  padding-left: 1.125rem;
+  line-height: 1.5;
 }
 
-.timeline-details li::before {
+.exp-card-details li::before {
   content: '▹';
   position: absolute;
   left: 0;
   color: var(--primary);
 }
 
-.timeline-tech {
+.exp-card-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.timeline-tech span {
+.exp-card-tech span {
   padding: 0.25rem 0.75rem;
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -1062,7 +1269,7 @@ ul {
   font-weight: 500;
 }
 
-.timeline-apps {
+.exp-card-apps {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -1086,53 +1293,116 @@ ul {
   transform: translateY(-2px);
 }
 
-@media (min-width: 768px) {
-  .timeline::before {
-    left: 50%;
-    transform: translateX(-50%);
+/* Dot indicators */
+.exp-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.exp-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.exp-dot:hover {
+  background: var(--primary-light);
+}
+
+.exp-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .exp-overview-item {
+    width: 170px;
   }
 
-  .timeline-item {
-    padding-left: 0;
-    padding-right: 0;
-    width: 50%;
+  .exp-card {
+    flex: 0 0 min(640px, 82%);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .exp-overview {
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    padding-bottom: 2rem;
   }
 
-  .timeline-item:nth-child(odd) {
-    padding-right: 40px;
-    text-align: right;
+  .exp-overview-item {
+    width: auto;
+    flex: 1;
+    max-width: 200px;
   }
 
-  .timeline-item:nth-child(even) {
-    margin-left: 50%;
-    padding-left: 40px;
+  .exp-card {
+    flex: 0 0 min(720px, 68%);
   }
 
-  .timeline-marker {
-    left: auto;
-    right: -21px;
+  .exp-card-details {
+    max-height: none;
+    overflow-y: visible;
   }
 
-  .timeline-item:nth-child(even) .timeline-marker {
-    left: -21px;
-    right: auto;
+  .exp-carousel-viewport::before,
+  .exp-carousel-viewport::after {
+    width: 4rem;
   }
 
-  .timeline-item:nth-child(odd) .timeline-header {
-    justify-content: flex-end;
+  .exp-nav {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-carousel-track {
+    scroll-behavior: auto;
   }
 
-  .timeline-item:nth-child(odd) .timeline-company {
-    justify-content: flex-end;
+  .exp-card,
+  .exp-overview-item,
+  .exp-nav {
+    transition: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-card {
+    flex-direction: column;
+    padding: 1.25rem;
   }
 
-  .timeline-item:nth-child(odd) .timeline-details {
-    text-align: left;
+  .exp-card-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
   }
 
-  .timeline-item:nth-child(odd) .timeline-tech,
-  .timeline-item:nth-child(odd) .timeline-apps {
-    justify-content: flex-end;
+  .exp-card-title {
+    font-size: 1.15rem;
+  }
+
+  .exp-carousel-header {
+    gap: 0.75rem;
+  }
+
+  .exp-nav {
+    width: 40px;
+    height: 40px;
   }
 }
 

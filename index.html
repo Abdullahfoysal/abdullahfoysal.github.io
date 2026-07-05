@@ -333,189 +333,193 @@
       <div class="section-header" data-aos="fade-up">
         <span class="section-subtitle">My Journey</span>
         <h2 class="section-title">Work Experience</h2>
+        <p class="section-description">5 roles across 5+ years — swipe or use the timeline to explore</p>
       </div>
 
-      <div class="timeline">
-        <!-- Current Position -->
-        <div class="timeline-item" data-aos="fade-up">
-          <div class="timeline-marker current">
-            <i class="fas fa-briefcase"></i>
+      <!-- At-a-glance overview strip -->
+      <div class="exp-overview" role="tablist" aria-label="Experience timeline" data-aos="fade-up">
+        <button class="exp-overview-item active current" role="tab" aria-selected="true" aria-controls="exp-card-0" data-index="0">
+          <span class="exp-overview-icon"><i class="fas fa-briefcase"></i></span>
+          <span class="exp-overview-role">Software Engineer</span>
+          <span class="exp-overview-company">Kaz Software Ltd.</span>
+          <span class="exp-overview-date">Jul 2024 – Present</span>
+        </button>
+        <button class="exp-overview-item" role="tab" aria-selected="false" aria-controls="exp-card-1" data-index="1">
+          <span class="exp-overview-icon"><i class="fas fa-code"></i></span>
+          <span class="exp-overview-role">Associate Engineer</span>
+          <span class="exp-overview-company">Kaz Software Ltd.</span>
+          <span class="exp-overview-date">Mar 2022 – Jun 2024</span>
+        </button>
+        <button class="exp-overview-item" role="tab" aria-selected="false" aria-controls="exp-card-2" data-index="2">
+          <span class="exp-overview-icon"><i class="fas fa-laptop-code"></i></span>
+          <span class="exp-overview-role">Intern</span>
+          <span class="exp-overview-company">Kaz Software Ltd.</span>
+          <span class="exp-overview-date">Sep 2021 – Feb 2022</span>
+        </button>
+        <button class="exp-overview-item" role="tab" aria-selected="false" aria-controls="exp-card-3" data-index="3">
+          <span class="exp-overview-icon"><i class="fas fa-mobile-alt"></i></span>
+          <span class="exp-overview-role">Flutter Developer</span>
+          <span class="exp-overview-company">InnovexIT</span>
+          <span class="exp-overview-date">Apr 2021 – Jul 2021</span>
+        </button>
+        <button class="exp-overview-item" role="tab" aria-selected="false" aria-controls="exp-card-4" data-index="4">
+          <span class="exp-overview-icon"><i class="fas fa-rocket"></i></span>
+          <span class="exp-overview-role">Team Lead</span>
+          <span class="exp-overview-company">Mekao Startup</span>
+          <span class="exp-overview-date">Jul 2020 – Jul 2021</span>
+        </button>
+      </div>
+
+      <!-- Card carousel -->
+      <div class="exp-carousel" data-aos="fade-up" data-aos-delay="100">
+        <div class="exp-carousel-header">
+          <button class="exp-nav exp-nav-prev" id="expPrev" aria-label="Previous experience" disabled>
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="exp-carousel-counter" aria-live="polite">
+            <span id="expCurrent">1</span> / <span id="expTotal">5</span>
           </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-date">
-                <i class="fas fa-calendar"></i>
-                Jul 2024 – Present. 1Y 6M
-              </span>
-              <span class="timeline-badge current">Current</span>
-            </div>
-            <h3 class="timeline-title">Software Engineer</h3>
-            <h4 class="timeline-company">
-              <i class="fas fa-building"></i>
-              Kaz Software Ltd. · Remote, Worthing, England
-            </h4>
-            <ul class="timeline-details">
-              <li>Lead Flutter Developer at Fitness Business Profits (FBP UK Team)</li>
-              <li>Built, released, and scaled platform now driving <strong>60+ production-ready apps</strong> on App Store and Google Play</li>
-              <li>Automated app building workflows using Bash scripts, GitHub Actions, and Fastlane</li>
-              <li>Stripe integration: one-time payments, subscriptions, and membership purchases</li>
-              <li>Rebuilt iOS admin and user apps in Flutter with scalable white-label architecture</li>
-              <li>AI-driven development using GitHub Copilot and prompt engineering</li>
-            </ul>
-            <div class="timeline-tech">
-              <span>Flutter</span>
-              <span>Swift</span>
-              <span>Firebase</span>
-              <span>Stripe</span>
-              <span>GitHub Actions</span>
-            </div>
-            <div class="timeline-apps">
-              <a href="https://apps.apple.com/qa/app/fbp-gym/id6503006025" target="_blank" class="app-link">
-                <i class="fab fa-app-store"></i> FBP GYM
-              </a>
-              <a href="https://apps.apple.com/qa/app/tailormade-coaching-bansha/id6670205832" target="_blank" class="app-link">
-                <i class="fab fa-app-store"></i> Tailormade Coaching
-              </a>
-            </div>
+          <button class="exp-nav exp-nav-next" id="expNext" aria-label="Next experience">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="exp-carousel-viewport">
+          <div class="exp-carousel-track" id="expCarouselTrack" role="tabpanel" tabindex="0" aria-label="Work experience details">
+            <!-- Current Position -->
+            <article class="exp-card active" id="exp-card-0" data-index="0">
+              <div class="exp-card-marker current"><i class="fas fa-briefcase"></i></div>
+              <div class="exp-card-body">
+                <div class="exp-card-header">
+                  <span class="exp-card-date"><i class="fas fa-calendar"></i> Jul 2024 – Present · 1Y 6M</span>
+                  <span class="exp-badge current">Current</span>
+                </div>
+                <h3 class="exp-card-title">Software Engineer</h3>
+                <p class="exp-card-company"><i class="fas fa-building"></i> Kaz Software Ltd. · Remote, Worthing, England</p>
+                <ul class="exp-card-details">
+                  <li>Lead Flutter Developer at Fitness Business Profits (FBP UK Team)</li>
+                  <li>Built, released, and scaled platform now driving <strong>60+ production-ready apps</strong> on App Store and Google Play</li>
+                  <li>Automated app building workflows using Bash scripts, GitHub Actions, and Fastlane</li>
+                  <li>Stripe integration: one-time payments, subscriptions, and membership purchases</li>
+                  <li>Rebuilt iOS admin and user apps in Flutter with scalable white-label architecture</li>
+                  <li>AI-driven development using GitHub Copilot and prompt engineering</li>
+                </ul>
+                <div class="exp-card-tech">
+                  <span>Flutter</span><span>Swift</span><span>Firebase</span><span>Stripe</span><span>GitHub Actions</span>
+                </div>
+                <div class="exp-card-apps">
+                  <a href="https://apps.apple.com/qa/app/fbp-gym/id6503006025" target="_blank" class="app-link" rel="noopener">
+                    <i class="fab fa-app-store"></i> FBP GYM
+                  </a>
+                  <a href="https://apps.apple.com/qa/app/tailormade-coaching-bansha/id6670205832" target="_blank" class="app-link" rel="noopener">
+                    <i class="fab fa-app-store"></i> Tailormade Coaching
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Associate Software Engineer -->
+            <article class="exp-card" id="exp-card-1" data-index="1">
+              <div class="exp-card-marker"><i class="fas fa-code"></i></div>
+              <div class="exp-card-body">
+                <div class="exp-card-header">
+                  <span class="exp-card-date"><i class="fas fa-calendar"></i> Mar 2022 – Jun 2024</span>
+                  <span class="exp-duration">2 years 4 months</span>
+                </div>
+                <h3 class="exp-card-title">Associate Software Engineer</h3>
+                <p class="exp-card-company"><i class="fas fa-building"></i> Kaz Software Ltd. · Hybrid, Dhaka, Bangladesh</p>
+                <ul class="exp-card-details">
+                  <li>Delivered iOS + WatchOS Health Monitoring app using Swift & HealthKit in 5 months</li>
+                  <li>Built Flutter Book/Quiz app HAKMA achieving <strong>2K subscriptions</strong> with <strong>100K+ downloads</strong></li>
+                  <li>Built Hatil e-commerce iOS native app with Combine, earning <strong>4.7 rating</strong></li>
+                  <li>Led Flutter development for Patient Care WebEVV from UI design to production deployment</li>
+                  <li>Mentored intern developers in Flutter best practices, improving team productivity</li>
+                </ul>
+                <div class="exp-card-tech">
+                  <span>Swift</span><span>HealthKit</span><span>Flutter</span><span>Combine</span><span>Firebase</span>
+                </div>
+                <div class="exp-card-apps">
+                  <a href="https://apps.apple.com/us/app/hakma-little-muslim-hub/id6446335154?l=es-MX" target="_blank" class="app-link" rel="noopener">
+                    <i class="fab fa-app-store"></i> HAKMA Book Reader
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.swe.evv" target="_blank" class="app-link" rel="noopener">
+                    <i class="fab fa-google-play"></i> EVV App
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Intern -->
+            <article class="exp-card" id="exp-card-2" data-index="2">
+              <div class="exp-card-marker"><i class="fas fa-laptop-code"></i></div>
+              <div class="exp-card-body">
+                <div class="exp-card-header">
+                  <span class="exp-card-date"><i class="fas fa-calendar"></i> Sep 2021 – Feb 2022</span>
+                  <span class="exp-duration">6 months</span>
+                </div>
+                <h3 class="exp-card-title">Software Engineer Intern</h3>
+                <p class="exp-card-company"><i class="fas fa-building"></i> Kaz Software Ltd. · Dhaka, Bangladesh</p>
+                <ul class="exp-card-details">
+                  <li>Six-month internship as part of undergrad curriculum</li>
+                  <li>Designed feature-rich mobile application using Flutter</li>
+                  <li>Integrated features with REST API backend</li>
+                </ul>
+                <div class="exp-card-tech">
+                  <span>Flutter</span><span>Dart</span><span>REST API</span><span>Git</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- InnovexIT -->
+            <article class="exp-card" id="exp-card-3" data-index="3">
+              <div class="exp-card-marker"><i class="fas fa-mobile-alt"></i></div>
+              <div class="exp-card-body">
+                <div class="exp-card-header">
+                  <span class="exp-card-date"><i class="fas fa-calendar"></i> Apr 2021 – Jul 2021</span>
+                  <span class="exp-duration">4 months</span>
+                </div>
+                <h3 class="exp-card-title">Flutter Developer</h3>
+                <p class="exp-card-company"><i class="fas fa-building"></i> InnovexIT · Onsite, Sylhet, Bangladesh</p>
+                <ul class="exp-card-details">
+                  <li>Designed and developed Flutter Rider App UI for smooth user experience</li>
+                  <li>Performed critical bug fixes and UI enhancements</li>
+                  <li>Improved app functionality, performance, and user experience</li>
+                </ul>
+                <div class="exp-card-tech">
+                  <span>Flutter</span><span>Dart</span><span>UI/UX</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Mekao Startup -->
+            <article class="exp-card" id="exp-card-4" data-index="4">
+              <div class="exp-card-marker"><i class="fas fa-rocket"></i></div>
+              <div class="exp-card-body">
+                <div class="exp-card-header">
+                  <span class="exp-card-date"><i class="fas fa-calendar"></i> Jul 2020 – Jul 2021</span>
+                  <span class="exp-duration">1 year</span>
+                </div>
+                <h3 class="exp-card-title">Flutter Developer & Team Lead</h3>
+                <p class="exp-card-company"><i class="fas fa-building"></i> Mekao (Startup) · Remote, Chittagong, Bangladesh</p>
+                <ul class="exp-card-details">
+                  <li>Built multi-service provider app connecting technicians with customers</li>
+                  <li>Developed admin monitoring dashboard for seamless operations</li>
+                  <li>Spearheaded the project from MVP to production in 12 months</li>
+                </ul>
+                <div class="exp-card-tech">
+                  <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Leadership</span>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
 
-        <!-- Associate Software Engineer -->
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="timeline-marker">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-date">
-                <i class="fas fa-calendar"></i>
-                Mar 2022 – Jun 2024
-              </span>
-              <span class="timeline-duration">2 years 4 months</span>
-            </div>
-            <h3 class="timeline-title">Associate Software Engineer</h3>
-            <h4 class="timeline-company">
-              <i class="fas fa-building"></i>
-              Kaz Software Ltd. · Hybrid, Dhaka, Bangladesh
-            </h4>
-            <ul class="timeline-details">
-              <li>Delivered iOS + WatchOS Health Monitoring app using Swift & HealthKit in 5 months</li>
-              <li>Built Flutter Book/Quiz app HAKMA achieving <strong>2K subscriptions</strong> with <strong>100K+ downloads</strong></li>
-              <li>Built Hatil e-commerce iOS native app with Combine, earning <strong>4.7 rating</strong></li>
-              <li>Led Flutter development for Patient Care WebEVV from UI design to production deployment</li>
-              <li>Mentored intern developers in Flutter best practices, improving team productivity</li>
-            </ul>
-            <div class="timeline-tech">
-              <span>Swift</span>
-              <span>HealthKit</span>
-              <span>Flutter</span>
-              <span>Combine</span>
-              <span>Firebase</span>
-            </div>
-            <div class="timeline-apps">
-              <a href="https://apps.apple.com/us/app/hakma-little-muslim-hub/id6446335154?l=es-MX" target="_blank" class="app-link">
-                <i class="fab fa-app-store"></i> HAKMA Book Reader
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.swe.evv" target="_blank" class="app-link">
-                <i class="fab fa-google-play"></i> EVV App
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Intern -->
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="timeline-marker">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-date">
-                <i class="fas fa-calendar"></i>
-                Sep 2021 – Feb 2022
-              </span>
-              <span class="timeline-duration">6 months</span>
-            </div>
-            <h3 class="timeline-title">Software Engineer Intern</h3>
-            <h4 class="timeline-company">
-              <i class="fas fa-building"></i>
-              Kaz Software Ltd. · Dhaka, Bangladesh
-            </h4>
-            <ul class="timeline-details">
-              <li>Six-month internship as part of undergrad curriculum</li>
-              <li>Designed feature-rich mobile application using Flutter</li>
-              <li>Integrated features with REST API backend</li>
-            </ul>
-            <div class="timeline-tech">
-              <span>Flutter</span>
-              <span>Dart</span>
-              <span>REST API</span>
-              <span>Git</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- InnovexIT -->
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="timeline-marker">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-date">
-                <i class="fas fa-calendar"></i>
-                Apr 2021 – Jul 2021
-              </span>
-              <span class="timeline-duration">4 months</span>
-            </div>
-            <h3 class="timeline-title">Flutter Developer</h3>
-            <h4 class="timeline-company">
-              <i class="fas fa-building"></i>
-              InnovexIT · Onsite, Sylhet, Bangladesh
-            </h4>
-            <ul class="timeline-details">
-              <li>Designed and developed Flutter Rider App UI for smooth user experience</li>
-              <li>Performed critical bug fixes and UI enhancements</li>
-              <li>Improved app functionality, performance, and user experience</li>
-            </ul>
-            <div class="timeline-tech">
-              <span>Flutter</span>
-              <span>Dart</span>
-              <span>UI/UX</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mekao Startup -->
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="timeline-marker">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-date">
-                <i class="fas fa-calendar"></i>
-                Jul 2020 – Jul 2021
-              </span>
-              <span class="timeline-duration">1 year</span>
-            </div>
-            <h3 class="timeline-title">Flutter Developer & Team Lead</h3>
-            <h4 class="timeline-company">
-              <i class="fas fa-building"></i>
-              Mekao (Startup) · Remote, Chittagong, Bangladesh
-            </h4>
-            <ul class="timeline-details">
-              <li>Built multi-service provider app connecting technicians with customers</li>
-              <li>Developed admin monitoring dashboard for seamless operations</li>
-              <li>Spearheaded the project from MVP to production in 12 months</li>
-            </ul>
-            <div class="timeline-tech">
-              <span>Flutter</span>
-              <span>Dart</span>
-              <span>Firebase</span>
-              <span>Leadership</span>
-            </div>
-          </div>
+        <div class="exp-carousel-dots" role="tablist" aria-label="Experience slides">
+          <button class="exp-dot active" aria-label="Software Engineer at Kaz Software" aria-selected="true" data-index="0"></button>
+          <button class="exp-dot" aria-label="Associate Engineer at Kaz Software" aria-selected="false" data-index="1"></button>
+          <button class="exp-dot" aria-label="Intern at Kaz Software" aria-selected="false" data-index="2"></button>
+          <button class="exp-dot" aria-label="Flutter Developer at InnovexIT" aria-selected="false" data-index="3"></button>
+          <button class="exp-dot" aria-label="Team Lead at Mekao" aria-selected="false" data-index="4"></button>
         </div>
       </div>
     </div>

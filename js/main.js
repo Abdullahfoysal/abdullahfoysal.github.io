@@ -237,6 +237,118 @@
     images.forEach(img => imageObserver.observe(img));
   };
 
+  // ===== Experience Carousel =====
+  const initExperienceCarousel = () => {
+    const track = document.getElementById('expCarouselTrack');
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.exp-card');
+    const overviewItems = document.querySelectorAll('.exp-overview-item');
+    const dots = document.querySelectorAll('.exp-dot');
+    const prevBtn = document.getElementById('expPrev');
+    const nextBtn = document.getElementById('expNext');
+    const currentEl = document.getElementById('expCurrent');
+    const total = cards.length;
+    let activeIndex = 0;
+    let scrollTimer = null;
+
+    const goToSlide = (index, behavior = 'smooth') => {
+      const clamped = Math.max(0, Math.min(index, total - 1));
+      const card = cards[clamped];
+      if (!card) return;
+
+      activeIndex = clamped;
+      const offset = card.offsetLeft - track.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+
+      track.scrollTo({ left: offset, behavior });
+
+      cards.forEach((c, i) => c.classList.toggle('active', i === clamped));
+      overviewItems.forEach((item, i) => {
+        item.classList.toggle('active', i === clamped);
+        item.setAttribute('aria-selected', i === clamped ? 'true' : 'false');
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === clamped);
+        dot.setAttribute('aria-selected', i === clamped ? 'true' : 'false');
+      });
+
+      if (currentEl) currentEl.textContent = clamped + 1;
+      if (prevBtn) prevBtn.disabled = clamped === 0;
+      if (nextBtn) nextBtn.disabled = clamped === total - 1;
+
+      const activeOverview = overviewItems[clamped];
+      if (activeOverview) {
+        activeOverview.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    };
+
+    const getClosestIndex = () => {
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let closest = 0;
+      let minDist = Infinity;
+
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft - track.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(trackCenter - cardCenter);
+        if (dist < minDist) {
+          minDist = dist;
+          closest = i;
+        }
+      });
+
+      return closest;
+    };
+
+    const onScroll = () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const closest = getClosestIndex();
+        if (closest !== activeIndex) {
+          activeIndex = closest;
+          cards.forEach((c, i) => c.classList.toggle('active', i === closest));
+          overviewItems.forEach((item, i) => {
+            item.classList.toggle('active', i === closest);
+            item.setAttribute('aria-selected', i === closest ? 'true' : 'false');
+          });
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === closest);
+            dot.setAttribute('aria-selected', i === closest ? 'true' : 'false');
+          });
+          if (currentEl) currentEl.textContent = closest + 1;
+          if (prevBtn) prevBtn.disabled = closest === 0;
+          if (nextBtn) nextBtn.disabled = closest === total - 1;
+        }
+      }, 80);
+    };
+
+    overviewItems.forEach(item => {
+      item.addEventListener('click', () => goToSlide(parseInt(item.dataset.index, 10)));
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index, 10)));
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(activeIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(activeIndex + 1));
+
+    track.addEventListener('scroll', onScroll, { passive: true });
+
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToSlide(activeIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToSlide(activeIndex + 1);
+      }
+    });
+
+    window.addEventListener('resize', () => goToSlide(activeIndex, 'auto'));
+
+    goToSlide(0, 'auto');
+  };
+
   // ===== Keyboard Navigation =====
   const handleKeyboard = (e) => {
     // Close mobile nav on Escape
@@ -288,6 +400,7 @@
     animateCounters();
     initParticles();
     lazyLoadImages();
+    initExperienceCarousel();
 
     // Initial scroll check
     handleScroll();
