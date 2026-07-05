@@ -242,6 +242,7 @@
     const track = document.getElementById('expCarouselTrack');
     if (!track) return;
 
+    const overviewStrip = document.querySelector('.exp-overview');
     const cards = track.querySelectorAll('.exp-card');
     const overviewItems = document.querySelectorAll('.exp-overview-item');
     const dots = document.querySelectorAll('.exp-dot');
@@ -251,35 +252,50 @@
     const total = cards.length;
     let activeIndex = 0;
     let scrollTimer = null;
+    let resizeTimer = null;
 
-    const goToSlide = (index, behavior = 'smooth') => {
+    const scrollOverviewHorizontally = (item, behavior = 'smooth') => {
+      if (!overviewStrip || !item) return;
+      const left = item.offsetLeft - (overviewStrip.clientWidth - item.offsetWidth) / 2;
+      overviewStrip.scrollTo({ left: Math.max(0, left), behavior });
+    };
+
+    const syncSlideUI = (index) => {
+      cards.forEach((c, i) => c.classList.toggle('active', i === index));
+      overviewItems.forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+        item.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      });
+
+      if (currentEl) currentEl.textContent = index + 1;
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === total - 1;
+    };
+
+    const goToSlide = (index, behavior = 'smooth', { scrollOverview = false } = {}) => {
       const clamped = Math.max(0, Math.min(index, total - 1));
       const card = cards[clamped];
       if (!card) return;
 
       activeIndex = clamped;
       const offset = card.offsetLeft - track.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-
       track.scrollTo({ left: offset, behavior });
+      syncSlideUI(clamped);
 
-      cards.forEach((c, i) => c.classList.toggle('active', i === clamped));
-      overviewItems.forEach((item, i) => {
-        item.classList.toggle('active', i === clamped);
-        item.setAttribute('aria-selected', i === clamped ? 'true' : 'false');
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === clamped);
-        dot.setAttribute('aria-selected', i === clamped ? 'true' : 'false');
-      });
-
-      if (currentEl) currentEl.textContent = clamped + 1;
-      if (prevBtn) prevBtn.disabled = clamped === 0;
-      if (nextBtn) nextBtn.disabled = clamped === total - 1;
-
-      const activeOverview = overviewItems[clamped];
-      if (activeOverview) {
-        activeOverview.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      if (scrollOverview) {
+        scrollOverviewHorizontally(overviewItems[clamped], behavior);
       }
+    };
+
+    const repositionActiveCard = () => {
+      const card = cards[activeIndex];
+      if (!card) return;
+      const offset = card.offsetLeft - track.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+      track.scrollTo({ left: offset, behavior: 'auto' });
     };
 
     const getClosestIndex = () => {
@@ -305,46 +321,51 @@
         const closest = getClosestIndex();
         if (closest !== activeIndex) {
           activeIndex = closest;
-          cards.forEach((c, i) => c.classList.toggle('active', i === closest));
-          overviewItems.forEach((item, i) => {
-            item.classList.toggle('active', i === closest);
-            item.setAttribute('aria-selected', i === closest ? 'true' : 'false');
-          });
-          dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === closest);
-            dot.setAttribute('aria-selected', i === closest ? 'true' : 'false');
-          });
-          if (currentEl) currentEl.textContent = closest + 1;
-          if (prevBtn) prevBtn.disabled = closest === 0;
-          if (nextBtn) nextBtn.disabled = closest === total - 1;
+          syncSlideUI(closest);
         }
       }, 80);
     };
 
     overviewItems.forEach(item => {
-      item.addEventListener('click', () => goToSlide(parseInt(item.dataset.index, 10)));
+      item.addEventListener('click', () => {
+        goToSlide(parseInt(item.dataset.index, 10), 'smooth', { scrollOverview: true });
+      });
     });
 
     dots.forEach(dot => {
-      dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index, 10)));
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.index, 10), 'smooth', { scrollOverview: true });
+      });
     });
 
-    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(activeIndex - 1));
-    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(activeIndex + 1));
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToSlide(activeIndex - 1, 'smooth', { scrollOverview: true });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToSlide(activeIndex + 1, 'smooth', { scrollOverview: true });
+      });
+    }
 
     track.addEventListener('scroll', onScroll, { passive: true });
 
     track.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        goToSlide(activeIndex - 1);
+        goToSlide(activeIndex - 1, 'smooth', { scrollOverview: true });
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        goToSlide(activeIndex + 1);
+        goToSlide(activeIndex + 1, 'smooth', { scrollOverview: true });
       }
     });
 
-    window.addEventListener('resize', () => goToSlide(activeIndex, 'auto'));
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(repositionActiveCard, 150);
+    });
 
     goToSlide(0, 'auto');
   };

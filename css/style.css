@@ -944,6 +944,7 @@ ul {
   scroll-snap-type: x proximity;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .exp-overview::-webkit-scrollbar {
@@ -1120,6 +1121,7 @@ ul {
   padding: 0.5rem 1rem 1.5rem;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .exp-carousel-track::-webkit-scrollbar {
