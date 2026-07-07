@@ -2180,6 +2180,10 @@ ul {
   box-shadow: var(--card-shadow);
 }
 
+.certifications-list + .certifications-list {
+  margin-top: 1.5rem;
+}
+
 .cert-title {
   display: flex;
   align-items: center;
@@ -2251,6 +2255,11 @@ ul {
   background: rgba(99, 102, 241, 0.12);
   color: var(--primary);
   white-space: nowrap;
+}
+
+.cert-status.completed {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
 }
 
 .cert-item:hover .cert-status {
